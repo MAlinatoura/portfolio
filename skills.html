@@ -1,11 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Technische Fähigkeiten – Mindmap</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://www.goat1000.com/tagcanvas.min.js"></script>
 </head>
 <body>
   <nav class="navbar">
@@ -20,86 +21,71 @@
   </nav>
 
   <main class="fade-in">
-    <h1 style="text-align:center; margin-top: 40px;">🧠 Technische Fähigkeiten – Mindmap</h1>
-    <p style="text-align: center; max-width: 800px; margin: auto;">
-      Diese interaktive Übersicht zeigt meine wichtigsten technischen Kompetenzen – gegliedert nach Relevanz und Anwendungsbereichen.
-      Die Kerntechnologien stehen im Zentrum. Bewege den Mauszeiger über die Elemente für mehr Interaktivität.
-    </p>
+<section class="mindmap" aria-label="Technische Fähigkeiten">
+  <h2 style="text-align:center; font-size: 1.6em; margin-bottom: 10px;">
+    🧠 Technische Fähigkeiten – Mindmap
+  </h2>
+  <p style="text-align:center; max-width:700px; margin: 0 auto 30px;">
+    Diese interaktive Übersicht zeigt meine wichtigsten technischen Kompetenzen – gegliedert nach Relevanz und Anwendungsbereichen. Die Kerntechnologien stehen im Zentrum. Bewege den Mauszeiger über die Elemente für mehr Interaktivität.
+  </p>
 
-    <section class="mindmap" aria-label="Technische Fähigkeiten">
-    
-      <div class="node">JavaFX</div>
-      <div class="node">REST API</div>
-      <div class="node">Selenium</div>
-	  <div class="node">PHP</div>
-	  <div class="node">Scrum</div>
-      <div class="node">PostgreSQL</div>
-	  <div class="node important">JAVA</div>
-      <div class="node important">SPRING BOOT</div>
-      <div class="node important">PYTHON</div>
-      <div class="node">HTML / CSS</div>
-	  <div class="node">Docker</div>
-      <div class="node">JavaScript</div>
-      <div class="node">Git / GitHub</div>
-	  <div class="node">Oracle</div>
-      <div class="node">QGIS</div>
-      <div class="node">PL/SQL</div>
-      <div class="node">Linux</div>
-	  <div class="node">JavaEE</div>
-	  <div class="node">Eclipce</div>
-      <div class="node">Ruby on Rails</div>
-	  
-    </section>
+  <!-- Code -->
+ <div class="code-demo-area">
+  <div class="code-box">
+    <pre id="javaCode"></pre>
+  </div>
+  
+    <!-- TagCanvas -->
+ <div class="canvas-box">
+    <canvas id="skillCanvas" width="800" height="600"></canvas>
+  </div>
 
-    
-    <section style="margin-top: 60px;">
-      <h2 style="text-align: center;">💼 Berufserfahrung (Auszug)</h2>
-      <div class="project">
-        <h3>Netzwerkplaner Glasfaserausbau – Adams Network Engineering GmbH (2022–Heute)</h3>
-        <ul>
-          <li>Planung und Entwicklung von FttH-/FttX-Infrastrukturen</li>
-          <li>Automatisierung von Prozessen mit Java & Selenium</li>
-          <li>Erstellung von Web- und Desktop-Anwendungen</li>
-          <li>360°-Dokumentation per Kamera (Insta360 Pro)</li>
-        </ul>
-      </div>
-      <div class="project">
-        <h3>IT-Juniorberater – Körber Supply Chain Software GmbH (2021–2022)</h3>
-        <ul>
-          <li>Einarbeitung in KMotion WMS und PL/SQL</li>
-          <li>Erstellung eines 3D-Palettenbilds im Lagerverwaltungssystem</li>
-        </ul>
-      </div>
-      <div class="project">
-        <h3>Anwendungsentwickler – proLogistik GmbH + Co KG (2017–2021)</h3>
-        <ul>
-          <li>Webentwicklung mit Java, JSP, HTML, CSS, JavaScript</li>
-          <li>Client-Server-Architekturen, REST/SOAP-Schnittstellen</li>
-          <li>Einsatz von Eclipse, Git, Linux-Servern</li>
-        </ul>
-      </div>
-    </section>
+<!-- Rechts: GIF -->
+<div class="gif-box">
+    <img src="pictures/fiber-network.gif" alt="Glasfaser Netz Animation">
+  </div>
+</div>
 
-    <section style="margin-top: 60px;">
-      <h2 style="text-align: center;">🎯 Soft Skills & Werkzeuge</h2>
-      <ul class="tech-list">
-        <li>Teamfähigkeit 🤝</li>
-        <li>Selbstständigkeit 💡</li>
-        <li>Verantwortungsbewusstsein ✅</li>
-        <li>Problemlösung 🧩</li>
-        <li>Interkulturelle Kompetenz 🌍</li>
-        <li>Git / GitHub / GitLab</li>
-		<li>Projektmanagement</li>
-        <li>Docker / Jenkins / Maven/ Apache Tomcat</li>
-        <li>JUnit / IntelliJ / Eclipse</li>
-      </ul>
-    </section>
+<div id="skills" style="display: none;">
+  <ul>
+    <li><a href="#" data-weight="20" title="Objektorientierte Programmierung, Backend-Entwicklung & Automatisierung">☕ JAVA</a></li>
+    <li><a href="#" data-weight="18" title="Skripting, Datenverarbeitung & Automatisierung">🐍 PYTHON</a></li>
+    <li><a href="#" title="Webanwendungen mit Servlets, EJBs & JSF">📦 JAVAEE</a></li>
+    <li><a href="#" title="Automatisierte Webtests und Browser-Aktionen">🤖 Selenium</a></li>
+    <li><a href="#" title="Schnellere Backend-Entwicklung mit REST & Microservices">🍃 Spring Boot</a></li>
+    <li><a href="#" title="Datenkommunikation zwischen Frontend & Backend">🌐 REST API</a></li>
+    <li><a href="#" title="Relationale Datenbank mit GIS-Funktionen">🐘 PostgreSQL</a></li>
+    <li><a href="#" title="Oracle-SQL-Erweiterung für komplexe Abfragen">💾 PL/SQL</a></li>
+    <li><a href="#" title="GIS-Analyse, Kartendarstellung und Netzplanung">🗺️ QGIS</a></li>
+    <li><a href="#" title="Containerisierung von Anwendungen">🐳 Docker</a></li>
+    <li><a href="#" data-weight="15" title="Interaktive Webseiten & Webanwendungen">📜 JavaScript</a></li>
+    <li><a href="#" title="Versionskontrolle & kollaborative Entwicklung">🧑‍💻 Git / GitHub</a></li>
+    <li><a href="#" title="Struktur und Design moderner Webseiten">🎨 HTML / CSS</a></li>
+    <li><a href="#" title="Terminalbasierte Entwicklung und Server-Umgebungen">🐧 Linux</a></li>
+    <li><a href="#" title="Webentwicklung mit MVC-Struktur und Konventionen">💎 Ruby on Rails</a></li>
+  </ul>
+</div>
+
+ <section style="margin-top: 60px;">
+  <h2 style="text-align: center;">🎯 Soft Skills & Werkzeuge</h2>
+  <div class="badge-grid">
+    <span class="badge">🤝 Teamfähigkeit</span>
+    <span class="badge">💡 Selbstständigkeit</span>
+    <span class="badge">✅ Verantwortungsbewusstsein</span>
+    <span class="badge">🧠 Problemlösung</span>
+    <span class="badge">🌍 Interkulturelle Kompetenz</span>
+    <span class="badge">💻 Git / GitHub / GitLab</span>
+    <span class="badge">🗂️ Projektmanagement</span>
+    <span class="badge">🐳 Docker / Jenkins / Maven / Tomcat</span>
+    <span class="badge">🧪 JUnit / IntelliJ / Eclipse</span>
+  </div>
+</section>
 
     <footer style="text-align: center; margin: 60px 0 20px; font-size: 0.9em; opacity: 0.6;">
       Letzte Aktualisierung: Mai 2025 • Ali Natoura
     </footer>
   </main>
   
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

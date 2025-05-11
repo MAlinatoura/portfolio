@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ali Natoura – Kontakt</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
   <nav class="navbar">
@@ -18,16 +20,47 @@
       <li><a href="contact.html">✉️ Kontakt</a></li>
     </ul>
   </nav>
-  <main class="fade-in">
+<main class="fade-in kontakt-container">
 
-<h2>Kontakt</h2>
-<ul>
-   <li>Email: <a href="mailto:a.natoura@yahoo.com" target="_blank">a.natoura@yahoo.com</a></li>
-        <li>GitHub: <a href="https://malinatoura.github.io/portfolio/index.html" target="_blank">github.com/alinatoura</a></li>
-        <li>LinkedIn:  <a href="https://www.linkedin.com/in/ali-natoura-4268b320b" target="_blank">linkedin.com/in/alinatoura</a></li>
-</ul>
+  <!-- Link-Seite -->
+  <div class="kontakt-rechts">
+    <h2>Kontakt</h2>
+    <p>Du hast eine Idee, ein Projekt oder eine Frage? Schreib mir – ich freue mich auf den Austausch!</p>
+    <ul style="list-style: none; padding: 0; font-size: 1.1em;">
+      <li><i class="fas fa-envelope"></i> <strong>E-Mail:</strong> <a href="mailto:a.natoura@yahoo.com">a.natoura@yahoo.com</a></li>
+      <li><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/alinatoura" target="_blank">github.com/alinatoura</a></li>
+      <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ali-natoura-4268b320b" target="_blank">linkedin.com/in/ali-natoura</a></li>
+    </ul>
+  </div>
 
-  </main>
-  <script src="script.js"></script>
+  <!-- Formular -->
+  <div class="kontakt-links">
+    <h2>Nachricht senden</h2>
+    <form action="https://formsubmit.io/send/a.natoura@yahoo.com" method="POST">
+      <input type="hidden" name="_redirect" value="https://malinatoura.github.io/portfolio/contact.html#danke">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 10px;"><br>
+
+      <label for="email">E-Mail:</label><br>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 10px;"><br>
+
+      <label for="message">Nachricht:</label><br>
+      <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 10px;"></textarea><br>
+
+      <button type="submit" style="margin-top: 10px; padding: 10px 20px; background-color: #1e90ff; color: white; border: none; border-radius: 6px; cursor: pointer;">
+        ✉️ Nachricht senden
+      </button>
+	  <div id="danke" style="margin-top: 40px; display: none; color: limegreen; font-weight: bold;">
+  ✅ Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.
+</div>
+
+    </form>
+  </div>
+
+</main>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
