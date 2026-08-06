@@ -1,55 +1,124 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ali Natoura – Projekte</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekte – Ali Natoura</title>
+  <meta name="description" content="Ausgewählte Projekte: FTTx-Automatisierung, GIS-Tools, Java-Desktop-Anwendungen und Web-Automation.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
     <ul>
-      <li><a href="index.html">🏠 Start</a></li>
-      <li><a href="about.html">👤 Über mich</a></li>
-      <li><a href="skills.html">🧰 Fähigkeiten</a></li>
-      <li><a href="projects.html">📁 Projekte</a></li>
-      <li><a href="education.html">🎓 Ausbildung</a></li>
-      <li><a href="contact.html">✉️ Kontakt</a></li>
+      <li><a href="index.html">Start</a></li>
+      <li><a href="about.html">Über mich</a></li>
+      <li><a href="skills.html">Fähigkeiten</a></li>
+      <li><a href="projects.html" aria-current="page">Projekte</a></li>
+      <li><a href="education.html">Werdegang</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
     </ul>
   </nav>
+
   <main class="fade-in">
+    <h1>Projekte & Lösungen</h1>
+    <p class="section-desc">
+      Ausgewählte Arbeiten aus der Praxis – Fokus auf Automatisierung, Qualität und skalierbare Lösungen im FTTx- und Software-Umfeld.
+    </p>
 
-<h2>Projekte</h2>
+    <article class="project-card">
+      <div class="project-header">
+        <h2>FTTx-Planungsautomatisierung (Python)</h2>
+        <span class="project-tag">ALTEN / OXG · aktuell</span>
+      </div>
+      <p>
+        Eigenentwickelte Python-Lösungen zur Automatisierung wiederkehrender FTTx-Planungsprozesse.
+        Deutliche Reduktion manueller Bearbeitungszeit und messbare Steigerung der Datenqualität.
+        Systematische Fehleranalyse und nachhaltige Behebung über automatisierte Prüfroutinen.
+      </p>
+      <div class="tech-tags">
+        <span>Python</span><span>GIS</span><span>Qualitätssicherung</span><span>Prozessautomatisierung</span>
+      </div>
+    </article>
 
-<div class="project">
-  <h3>🔦 Li-Fi Datenübertragung</h3>
-  <p>
-    In diesem Projekt habe ich ein Li-Fi-System entwickelt, das Daten per Infrarotlicht statt Funk überträgt.
-    Ziel war es, eine alternative drahtlose Kommunikation zu erforschen. Ich habe dazu Arduino, Photodioden, IR-LEDs
-    und ein OLED-Display verwendet. <br>
-    <strong>Technologien:</strong> Arduino, IR, C++, Elektronik, OLED.
-  </p>
-</div>
+    <article class="project-card">
+      <div class="project-header">
+        <h2>GIS-gestützte Trassen- & Netzplanung</h2>
+        <span class="project-tag">ALTEN / Adams</span>
+      </div>
+      <p>
+        Konzeption und Umsetzung von GIS-Analysen als Entscheidungsgrundlage für Trassen- und Netzplanung.
+        Fachliche Koordination über mehrere Ausbaugebiete (u. a. Bonn, Koblenz) und Schnittstelle zwischen
+        Planung, Technik und Behörden.
+      </p>
+      <div class="tech-tags">
+        <span>QGIS</span><span>GIS-Analysen</span><span>FTTx</span><span>Koordination</span>
+      </div>
+    </article>
 
-<div class="project">
-  <h3>📦 Inventarverwaltung</h3>
-  <p>
-    Entwicklung einer JavaFX-Anwendung zur Verwaltung von Produkten, Lieferanten und Bestellungen mit Datenbankanbindung.
-    Nutzer können Artikel hinzufügen, bearbeiten, suchen und löschen.<br>
-    <strong>Technologien:</strong> Java, JavaFX, JDBC, MySQL.
-  </p>
-</div>
+    <article class="project-card">
+      <div class="project-header">
+        <h2>GIS-Webautomation (Selenium)</h2>
+        <span class="project-tag">Adams Group</span>
+      </div>
+      <p>
+        Automatisierte Web-Interaktionen mit einem GIS-System zur Netzplanung (Netwin) mittels Selenium.
+        Verkürzung manueller Klickpfade und automatisierte Datenverarbeitung – spürbare Effizienzsteigerung
+        im täglichen Planungsalltag.
+      </p>
+      <div class="tech-tags">
+        <span>Java</span><span>Selenium</span><span>GIS</span><span>Web-Automation</span>
+      </div>
+    </article>
 
-<div class="project">
-  <h3>🗌️ GIS-Webautomation</h3>
-  <p>
-    Automatisierte Web-Interaktionen mit einem GIS-System zur Netzplanung (Netwin) mittels Selenium.
-    Die Lösung hilft, manuelle Klickpfade bei der Planung zu verkürzen und Daten automatisiert zu verarbeiten.<br>
-    <strong>Technologien:</strong> Java, Selenium, GIS, Webautomation.
-  </p>
-</div>
+    <article class="project-card">
+      <div class="project-header">
+        <h2>Desktop-Tools zur Prozessautomatisierung</h2>
+        <span class="project-tag">Adams Group</span>
+      </div>
+      <p>
+        Entwicklung von Desktop-Anwendungen (Java / JavaFX) zur Unterstützung der FTTx-Planung und
+        Workflow-Optimierung. Integration von Excel-Prozessen und 360°-Kameradokumentation (Insta360 Pro)
+        für die Netzplanung.
+      </p>
+      <div class="tech-tags">
+        <span>Java</span><span>JavaFX</span><span>Spring Boot</span><span>Excel-Integration</span>
+      </div>
+    </article>
 
+    <article class="project-card">
+      <div class="project-header">
+        <h2>Inventarverwaltung (JavaFX)</h2>
+        <span class="project-tag">Eigenes Projekt</span>
+      </div>
+      <p>
+        Vollständige JavaFX-Anwendung zur Verwaltung von Produkten, Lieferanten und Bestellungen
+        mit JDBC-Datenbankanbindung. CRUD-Operationen, Suche und saubere Architektur.
+      </p>
+      <div class="tech-tags">
+        <span>Java</span><span>JavaFX</span><span>JDBC</span><span>MySQL</span>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <div class="project-header">
+        <h2>Li-Fi Datenübertragung</h2>
+        <span class="project-tag">Forschungs-/Hobbyprojekt</span>
+      </div>
+      <p>
+        Experimentelles System zur Datenübertragung per Infrarotlicht (statt Funk).
+        Hardware-nahe Programmierung mit Arduino, Photodioden, IR-LEDs und OLED-Display.
+      </p>
+      <div class="tech-tags">
+        <span>Arduino</span><span>C++</span><span>Elektronik</span><span>IR / Li-Fi</span>
+      </div>
+    </article>
   </main>
-  <script src="js/script.js"></script>
+
+  <footer class="site-footer">
+    <p>© 2026 Ali Natoura</p>
+  </footer>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>
