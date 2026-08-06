@@ -3,89 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Technische Fähigkeiten – Mindmap</title>
+  <title>Fähigkeiten – Ali Natoura</title>
+  <meta name="description" content="Technische Skills: Java, Spring Boot, Python, GIS/QGIS, FTTx-Netzplanung, Microservices, Automatisierung.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://www.goat1000.com/tagcanvas.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBE0OszQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://www.goat1000.com/tagcanvas.min.js" defer></script>
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
     <ul>
-      <li><a href="index.html">🏠 Start</a></li>
-      <li><a href="about.html">👤 Über mich</a></li>
-      <li><a href="skills.html">🧰 Fähigkeiten</a></li>
-      <li><a href="projects.html">📁 Projekte</a></li>
-      <li><a href="education.html">🎓 Ausbildung</a></li>
-      <li><a href="contact.html">✉️ Kontakt</a></li>
+      <li><a href="index.html">Start</a></li>
+      <li><a href="about.html">Über mich</a></li>
+      <li><a href="skills.html" aria-current="page">Fähigkeiten</a></li>
+      <li><a href="projects.html">Projekte</a></li>
+      <li><a href="education.html">Werdegang</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
     </ul>
   </nav>
 
   <main class="fade-in">
-<section class="mindmap" aria-label="Technische Fähigkeiten">
-  <h2 style="text-align:center; font-size: 1.6em; margin-bottom: 10px;">
-    🧠 Technische Fähigkeiten – Mindmap
-  </h2>
-  <p style="text-align:center; max-width:700px; margin: 0 auto 30px;">
-    Diese interaktive Übersicht zeigt meine wichtigsten technischen Kompetenzen – gegliedert nach Relevanz und Anwendungsbereichen. Die Kerntechnologien stehen im Zentrum. Bewege den Mauszeiger über die Elemente für mehr Interaktivität.
-  </p>
+    <h1>Technische Fähigkeiten</h1>
+    <p class="section-desc">
+      Interaktive Übersicht meiner Kerntechnologien – von Backend-Entwicklung bis FTTx-Automatisierung und GIS.
+    </p>
 
-  <!-- Code -->
- <div class="code-demo-area">
-  <div class="code-box">
-    <pre id="javaCode"></pre>
-  </div>
-  
-    <!-- TagCanvas -->
- <div class="canvas-box">
-    <canvas id="skillCanvas" width="800" height="600"></canvas>
-  </div>
+    <!-- Code-Demos + TagCanvas -->
+    <div class="code-demo-area">
+      <!-- Programming Trick 1: Python FTTx Automation -->
+      <div class="code-box">
+        <div class="code-header">Python · FTTx Prozess-Automatisierung</div>
+        <pre id="pythonCode" class="code-content"></pre>
+      </div>
 
-<!-- Rechts: GIF -->
-<div class="gif-box">
-    <img src="pictures/fiber-network.gif" alt="Glasfaser Netz Animation">
-  </div>
-</div>
+      <!-- TagCanvas -->
+      <div class="canvas-box">
+        <canvas id="skillCanvas" width="500" height="420" aria-label="Interaktive Skill-Cloud"></canvas>
+      </div>
 
-<div id="skills" style="display: none;">
-  <ul>
-    <li><a href="#" data-weight="20" title="Objektorientierte Programmierung, Backend-Entwicklung & Automatisierung">☕ JAVA</a></li>
-    <li><a href="#" data-weight="18" title="Skripting, Datenverarbeitung & Automatisierung">🐍 PYTHON</a></li>
-    <li><a href="#" title="Webanwendungen mit Servlets, EJBs & JSF">📦 JAVAEE</a></li>
-    <li><a href="#" title="Automatisierte Webtests und Browser-Aktionen">🤖 Selenium</a></li>
-    <li><a href="#" title="Schnellere Backend-Entwicklung mit REST & Microservices">🍃 Spring Boot</a></li>
-    <li><a href="#" title="Datenkommunikation zwischen Frontend & Backend">🌐 REST API</a></li>
-    <li><a href="#" title="Relationale Datenbank mit GIS-Funktionen">🐘 PostgreSQL</a></li>
-    <li><a href="#" title="Oracle-SQL-Erweiterung für komplexe Abfragen">💾 PL/SQL</a></li>
-    <li><a href="#" title="GIS-Analyse, Kartendarstellung und Netzplanung">🗺️ QGIS</a></li>
-    <li><a href="#" title="Containerisierung von Anwendungen">🐳 Docker</a></li>
-    <li><a href="#" data-weight="15" title="Interaktive Webseiten & Webanwendungen">📜 JavaScript</a></li>
-    <li><a href="#" title="Versionskontrolle & kollaborative Entwicklung">🧑‍💻 Git / GitHub</a></li>
-    <li><a href="#" title="Struktur und Design moderner Webseiten">🎨 HTML / CSS</a></li>
-    <li><a href="#" title="Terminalbasierte Entwicklung und Server-Umgebungen">🐧 Linux</a></li>
-    <li><a href="#" title="Webentwicklung mit MVC-Struktur und Konventionen">💎 Ruby on Rails</a></li>
-  </ul>
-</div>
+      <!-- Programming Trick 2: Java / Spring -->
+      <div class="code-box">
+        <div class="code-header">Java · Spring Boot REST + Validierung</div>
+        <pre id="javaCode" class="code-content"></pre>
+      </div>
+    </div>
 
- <section style="margin-top: 60px;">
-  <h2 style="text-align: center;">🎯 Soft Skills & Werkzeuge</h2>
-  <div class="badge-grid">
-    <span class="badge">🤝 Teamfähigkeit</span>
-    <span class="badge">💡 Selbstständigkeit</span>
-    <span class="badge">✅ Verantwortungsbewusstsein</span>
-    <span class="badge">🧠 Problemlösung</span>
-    <span class="badge">🌍 Interkulturelle Kompetenz</span>
-    <span class="badge">💻 Git / GitHub / GitLab</span>
-    <span class="badge">🗂️ Projektmanagement</span>
-    <span class="badge">🐳 Docker / Jenkins / Maven / Tomcat</span>
-    <span class="badge">🧪 JUnit / IntelliJ / Eclipse</span>
-  </div>
-</section>
+    <!-- Hidden skills list for TagCanvas -->
+    <div id="skills" style="display:none;">
+      <ul>
+        <li><a href="#" data-weight="22" title="Objektorientierte Programmierung, Backend & Automatisierung">☕ Java</a></li>
+        <li><a href="#" data-weight="20" title="Skripting, Datenverarbeitung & FTTx-Automatisierung">🐍 Python</a></li>
+        <li><a href="#" data-weight="18" title="RESTful APIs, Microservices, Boot">🍃 Spring Boot</a></li>
+        <li><a href="#" data-weight="16" title="Desktop-Anwendungen & Tools">🖥️ JavaFX</a></li>
+        <li><a href="#" data-weight="17" title="GIS-Analyse, Trassen- & Netzplanung">🗺️ QGIS / GIS</a></li>
+        <li><a href="#" data-weight="15" title="FttH / FttX Infrastrukturplanung">📡 FTTx</a></li>
+        <li><a href="#" data-weight="14" title="Datenkommunikation Frontend ↔ Backend">🌐 REST API</a></li>
+        <li><a href="#" data-weight="13" title="Relationale DB + GIS-Funktionen">🐘 PostgreSQL</a></li>
+        <li><a href="#" data-weight="12" title="Web-Automation & Tests">🤖 Selenium</a></li>
+        <li><a href="#" data-weight="12" title="Containerisierung">🐳 Docker</a></li>
+        <li><a href="#" data-weight="11" title="Versionskontrolle">🧑‍💻 Git / GitHub</a></li>
+        <li><a href="#" data-weight="11" title="Microservices-Architektur">⚙️ Microservices</a></li>
+        <li><a href="#" data-weight="10" title="HTML, CSS, JavaScript">🎨 Frontend</a></li>
+        <li><a href="#" data-weight="10" title="SQL, PL/SQL, MySQL, Oracle">💾 SQL / PL/SQL</a></li>
+        <li><a href="#" data-weight="9" title="CI/CD & Build">🔧 Maven / Jenkins</a></li>
+      </ul>
+    </div>
 
-    <footer style="text-align: center; margin: 60px 0 20px; font-size: 0.9em; opacity: 0.6;">
-      Letzte Aktualisierung: Mai 2025 • Ali Natoura
-    </footer>
+    <!-- Skill Categories -->
+    <section class="skills-grid">
+      <div class="skill-category">
+        <h3>Backend & Sprachen</h3>
+        <div class="badge-grid">
+          <span class="badge">Java</span>
+          <span class="badge">Spring Boot</span>
+          <span class="badge">Python</span>
+          <span class="badge">JavaFX</span>
+          <span class="badge">Microservices</span>
+          <span class="badge">REST / SOAP</span>
+          <span class="badge">Hibernate</span>
+          <span class="badge">JUnit</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Netzplanung & GIS</h3>
+        <div class="badge-grid">
+          <span class="badge">FTTx / FttH</span>
+          <span class="badge">QGIS</span>
+          <span class="badge">GIS-Analysen</span>
+          <span class="badge">Netzwerktechnik</span>
+          <span class="badge">Trassenplanung</span>
+          <span class="badge">360°-Dokumentation</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Daten & Infrastruktur</h3>
+        <div class="badge-grid">
+          <span class="badge">PostgreSQL</span>
+          <span class="badge">MySQL</span>
+          <span class="badge">Oracle / PL/SQL</span>
+          <span class="badge">Docker</span>
+          <span class="badge">Git / GitLab</span>
+          <span class="badge">Maven / Jenkins</span>
+          <span class="badge">Linux</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Soft Skills</h3>
+        <div class="badge-grid">
+          <span class="badge">Teamfähigkeit</span>
+          <span class="badge">Problemlösung</span>
+          <span class="badge">Verantwortung</span>
+          <span class="badge">Selbstständigkeit</span>
+          <span class="badge">Interkulturelle Kompetenz</span>
+          <span class="badge">Projektkoordination</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programming Trick 3 -->
+    <section class="code-trick">
+      <h2>💡 Programmier-Trick: Sichere & effiziente Validierung</h2>
+      <p>Kleine, aber wirksame Patterns, die ich in Produktivcode einsetze:</p>
+      <div class="code-box full-width">
+        <div class="code-header">Python – defensive Datenprüfung vor GIS-Export</div>
+        <pre class="code-content static">def validate_fttx_record(record: dict) -> bool:
+    """Qualitätssicherung vor dem Schreiben in die Planungs-DB."""
+    required = {"trasse_id", "start_node", "end_node", "length_m"}
+    if not required.issubset(record):
+        return False
+    if record["length_m"] <= 0 or not isinstance(record["trasse_id"], str):
+        return False
+    # Weitere fachliche Checks (z. B. Koordinaten-Plausibilität)
+    return True</pre>
+      </div>
+    </section>
   </main>
-  
-  <script src="js/script.js"></script>
+
+  <footer class="site-footer">
+    <p>© 2026 Ali Natoura · Letzte Aktualisierung: August 2026</p>
+  </footer>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>
