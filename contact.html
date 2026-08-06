@@ -1,66 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ali Natoura – Kontakt</title>
-  <link rel="stylesheet" href="css/style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Ali Natoura</title>
+  <meta name="description" content="Kontaktieren Sie Ali Natoura – Softwareentwickler und FTTx Consultant.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBE0OszQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
     <ul>
-      <li><a href="index.html">🏠 Start</a></li>
-      <li><a href="about.html">👤 Über mich</a></li>
-      <li><a href="skills.html">🧰 Fähigkeiten</a></li>
-      <li><a href="projects.html">📁 Projekte</a></li>
-      <li><a href="education.html">🎓 Ausbildung</a></li>
-      <li><a href="contact.html">✉️ Kontakt</a></li>
+      <li><a href="index.html">Start</a></li>
+      <li><a href="about.html">Über mich</a></li>
+      <li><a href="skills.html">Fähigkeiten</a></li>
+      <li><a href="projects.html">Projekte</a></li>
+      <li><a href="education.html">Werdegang</a></li>
+      <li><a href="contact.html" aria-current="page">Kontakt</a></li>
     </ul>
   </nav>
-<main class="fade-in kontakt-container">
 
-  <!-- Link-Seite -->
-  <div class="kontakt-rechts">
-    <h2>Kontakt</h2>
-    <p>Du hast eine Idee, ein Projekt oder eine Frage? Schreib mir – ich freue mich auf den Austausch!</p>
-    <ul style="list-style: none; padding: 0; font-size: 1.1em;">
-      <li><i class="fas fa-envelope"></i> <strong>E-Mail:</strong> <a href="mailto:a.natoura@yahoo.com">a.natoura@yahoo.com</a></li>
-      <li><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/alinatoura" target="_blank">github.com/alinatoura</a></li>
-      <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ali-natoura-4268b320b" target="_blank">linkedin.com/in/ali-natoura</a></li>
-    </ul>
-  </div>
+  <main class="fade-in kontakt-container">
+    <div class="kontakt-info">
+      <h1>Kontakt</h1>
+      <p>Du hast eine Idee, ein Projekt oder eine Frage? Schreib mir – ich freue mich auf den Austausch.</p>
 
-  <!-- Formular -->
-  <div class="kontakt-links">
-    <h2>Nachricht senden</h2>
-    <form action="https://formsubmit.io/send/a.natoura@yahoo.com" method="POST">
-      <input type="hidden" name="_redirect" value="https://malinatoura.github.io/portfolio/contact.html#danke">
-      <input type="hidden" name="_captcha" value="false">
+      <ul class="contact-list">
+        <li>
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <strong>E-Mail:</strong>
+          <a href="mailto:a.natoura@yahoo.com">a.natoura@yahoo.com</a>
+        </li>
+        <li>
+          <i class="fab fa-github" aria-hidden="true"></i>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/MAlinatoura" target="_blank" rel="noopener noreferrer">github.com/MAlinatoura</a>
+        </li>
+        <li>
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+          <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/ali-natoura-4268b320b" target="_blank" rel="noopener noreferrer">linkedin.com/in/ali-natoura</a>
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <strong>Standort:</strong> Dortmund, Deutschland
+        </li>
+      </ul>
+    </div>
 
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 10px;"><br>
+    <div class="kontakt-form">
+      <h2>Nachricht senden</h2>
+      <!-- Security: honeypot field + formsubmit with captcha option -->
+      <form action="https://formsubmit.co/a.natoura@yahoo.com" method="POST" autocomplete="on">
+        <!-- Redirect after submit -->
+        <input type="hidden" name="_next" value="https://malinatoura.github.io/portfolio/contact.html#danke">
+        <input type="hidden" name="_subject" value="Neue Nachricht über Portfolio">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
 
-      <label for="email">E-Mail:</label><br>
-      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 10px;"><br>
+        <!-- Honeypot against bots (security) -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-      <label for="message">Nachricht:</label><br>
-      <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 10px;"></textarea><br>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required maxlength="100" placeholder="Dein Name">
 
-      <button type="submit" style="margin-top: 10px; padding: 10px 20px; background-color: #1e90ff; color: white; border: none; border-radius: 6px; cursor: pointer;">
-        ✉️ Nachricht senden
-      </button>
-	  <div id="danke" style="margin-top: 40px; display: none; color: limegreen; font-weight: bold;">
-  ✅ Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.
-</div>
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required maxlength="150" placeholder="dein@email.de">
 
-    </form>
-  </div>
+        <label for="message">Nachricht</label>
+        <textarea id="message" name="message" rows="6" required maxlength="2000" placeholder="Deine Nachricht..."></textarea>
 
-</main>
+        <button type="submit">Nachricht senden</button>
+      </form>
 
-  <script src="js/script.js"></script>
+      <div id="danke" class="success-message" style="display:none;">
+        ✅ Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Ali Natoura</p>
+  </footer>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>
