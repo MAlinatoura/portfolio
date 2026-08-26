@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260826-2">
+  <link rel="stylesheet" href="style.css?v=20260826-3">
 </head>
 <body>
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
@@ -48,52 +48,17 @@
         </ul>
       </div>
 
-      <section class="topology reveal" aria-labelledby="topology-title">
-        <div class="topology-heading">
-          <div><p class="eyebrow">Interaktive Demo</p><h2 id="topology-title">Eine Nachricht durchs Netz.</h2></div>
-          <p id="signal-status" role="status" aria-live="polite">Wähle ein Zielhaus und starte die Übertragung.</p>
-        </div>
-        <div class="network-stage">
-          <svg id="network-map" viewBox="0 0 820 485" role="img" aria-label="Interaktive PON-Signalreise vom Central Office über den Fiber Distribution Hub bis zu einem ausgewählten ONT">
-            <defs>
-              <linearGradient id="fiber" x1="0" x2="1"><stop offset="0%" stop-color="#2f73ff"/><stop offset="55%" stop-color="#74b5ff"/><stop offset="100%" stop-color="#c2e8ff"/></linearGradient>
-              <filter id="glow"><feGaussianBlur stdDeviation="3.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            </defs>
-            <g class="grid"><path d="M22 40H800M22 110H800M22 180H800M22 250H800M22 320H800M22 390H800M22 460H800"/><path d="M80 20V472M180 20V472M280 20V472M380 20V472M480 20V472M580 20V472M680 20V472M780 20V472"/></g>
-            <g class="routes" fill="none" stroke="url(#fiber)" stroke-width="4" filter="url(#glow)">
-              <path id="route-trunk" d="M137 248H283C318 248 325 220 355 220H420"/>
-              <path id="route-house-0" d="M490 220H545C570 220 573 112 605 112H721"/>
-              <path id="route-house-1" d="M490 220H555C580 220 580 176 614 176H750"/>
-              <path id="route-house-2" d="M490 220H560C590 220 588 244 622 244H757"/>
-              <path id="route-house-3" d="M490 220H550C572 220 580 316 612 316H739"/>
-              <path id="route-house-4" d="M490 220H550C585 220 590 382 622 382H762"/>
-            </g>
-            <g class="drop-routes" fill="none" stroke="#497bc4" stroke-dasharray="3 8" stroke-width="2"><path d="M717 112L775 70"/><path d="M749 176L785 150"/><path d="M756 244L786 265"/><path d="M738 316L780 335"/><path d="M760 382L793 412"/></g>
-            <g class="network-node central-office" data-stage="central-office"><rect x="72" y="186" width="65" height="124" rx="4"/><path d="M84 203H125M84 219H125M84 235H125M84 252H125M84 268H125M84 284H125"/><text x="104" y="340">CO / OLT</text></g>
-            <g class="network-node fdh" data-stage="fdh"><rect x="420" y="184" width="70" height="72" rx="3"/><path d="M434 202H476M434 218H476M434 234H476"/><text x="455" y="287">FDH</text></g>
-            <g class="splice" fill="#d7efff"><circle cx="284" cy="248" r="7"/><circle cx="545" cy="220" r="7"/><circle cx="605" cy="112" r="7"/><circle cx="614" cy="176" r="7"/><circle cx="622" cy="244" r="7"/><circle cx="612" cy="316" r="7"/><circle cx="622" cy="382" r="7"/></g>
-            <g class="houses">
-              <g class="house interactive-house" data-target="0" tabindex="0" role="button" aria-label="Haus 1 als Ziel wählen"><path d="M770 58l19-17 19 17v26h-38zM780 84V67h18v17"/><text x="789" y="110">Haus 1</text></g>
-              <g class="house interactive-house" data-target="1" tabindex="0" role="button" aria-label="Haus 2 als Ziel wählen"><path d="M780 138l19-17 19 17v26h-38zM790 164v-17h18v17"/><text x="799" y="190">Haus 2</text></g>
-              <g class="house interactive-house" data-target="2" tabindex="0" role="button" aria-label="Haus 3 als Ziel wählen"><path d="M781 253l19-17 19 17v26h-38zM791 279v-17h18v17"/><text x="800" y="305">Haus 3</text></g>
-              <g class="house interactive-house" data-target="3" tabindex="0" role="button" aria-label="Haus 4 als Ziel wählen"><path d="M775 323l19-17 19 17v26h-38zM785 349v-17h18v17"/><text x="794" y="375">Haus 4</text></g>
-              <g class="house interactive-house" data-target="4" tabindex="0" role="button" aria-label="Haus 5 als Ziel wählen"><path d="M787 400l19-17 19 17v26h-38zM797 426v-17h18v17"/><text x="806" y="452">Haus 5</text></g>
-            </g>
-            <circle id="signal-packet" r="8" cx="104" cy="248" aria-hidden="true"/>
-          </svg>
-          <div class="signal-explainer">
-            <div class="signal-step is-current" data-info="mfg"><span>01</span><div><strong>Central Office / OLT</strong><p>Startpunkt: Das optische Signal wird in das PON eingespeist.</p></div></div>
-            <div class="signal-step" data-info="pdp"><span>02</span><div><strong>Fiber Distribution Hub (FDH)</strong><p>Verteiler: Die passende Faser wird zum Zielanschluss geführt.</p></div></div>
-            <div class="signal-step" data-info="home"><span>03</span><div><strong>ONT / Home</strong><p>Ankunft: Das Signal erreicht den optischen Netzabschluss im Haus.</p></div></div>
-          </div>
-        </div>
-        <div class="signal-controls">
-          <div class="target-picker" aria-label="Zielhaus auswählen">
-            <span>Ziel:</span><button class="target-button is-selected" type="button" data-target="0">Haus 1</button><button class="target-button" type="button" data-target="1">Haus 2</button><button class="target-button" type="button" data-target="2">Haus 3</button><button class="target-button" type="button" data-target="3">Haus 4</button><button class="target-button" type="button" data-target="4">Haus 5</button>
-          </div>
-          <button id="send-signal" class="button button-primary" type="button">Nachricht senden <span aria-hidden="true">→</span></button>
-        </div>
-      </section>
+      <aside class="professional-panel reveal" aria-labelledby="expertise-title">
+        <p class="eyebrow">Professional focus</p>
+        <h2 id="expertise-title">Engineering, das <em>Planung voranbringt.</em></h2>
+        <p class="panel-intro">Ich entwickle Werkzeuge und Workflows für die Schnittstelle aus Software, Daten und Glasfaserinfrastruktur.</p>
+        <dl class="focus-list">
+          <div><dt>01</dt><dd><strong>Planungsautomatisierung</strong><span>Python-Lösungen für wiederkehrende FTTx-Prozesse und Datenqualität.</span></dd></div>
+          <div><dt>02</dt><dd><strong>GIS &amp; Netzintelligenz</strong><span>Räumliche Analyse und strukturierte Netzplanung als Entscheidungsgrundlage.</span></dd></div>
+          <div><dt>03</dt><dd><strong>Software Engineering</strong><span>Java, Spring Boot und integrationsfähige Anwendungen mit klarer Architektur.</span></dd></div>
+        </dl>
+        <div class="panel-footer"><span>Aktuell</span><strong>Experienced Consultant (FTTx)</strong><em>ALTEN Germany · seit 03/2026</em></div>
+      </aside>
     </section>
 
     <section class="statement" id="profil">
@@ -175,6 +140,6 @@
     <span>Software Engineering × Fiber Infrastructure</span>
     <a href="#top">Nach oben ↑</a>
   </footer>
-  <script src="script.js?v=20260826-2"></script>
+  <script src="script.js?v=20260826-3"></script>
 </body>
 </html>
