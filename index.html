@@ -1,90 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Ali Natoura – Softwareentwickler | Java · Python · FTTx Netzplanung</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Ali Natoura – Experienced Consultant (FTTx) & Softwareentwickler. Spezialisiert auf Automatisierung von Glasfaser-Planungsprozessen, GIS, Java/Spring Boot und skalierbare Backend-Systeme.">
-  <meta name="keywords" content="Ali Natoura, Softwareentwickler, Java, Spring Boot, Python, FTTx, Glasfaser, GIS, Netzplanung, Automatisierung, Microservices, ALTEN Germany">
-  <meta name="author" content="Ali Natoura">
-  <meta name="robots" content="index, follow">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ali Natoura – Softwareentwickler & FTTx Consultant">
-  <meta property="og:description" content="Automatisierung, GIS-gestützte Netzplanung und skalierbare Backend-Systeme.">
-  <meta property="og:image" content="https://malinatoura.github.io/portfolio/pictures/portrait.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://malinatoura.github.io/portfolio/">
-  <meta property="og:locale" content="de_DE">
-
-  <link rel="icon" href="pictures/portrait.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ali Natoura – Experienced FTTx Consultant und Softwareentwickler. Automatisierung, GIS-gestützte Netzplanung, Java und Python.">
+  <meta name="theme-color" content="#07111f">
+  <title>Ali Natoura — Software Engineering × Fiber Infrastructure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
-    <ul>
-      <li><a href="index.html" aria-current="page">Start</a></li>
-      <li><a href="about.html">Über mich</a></li>
-      <li><a href="skills.html">Fähigkeiten</a></li>
-      <li><a href="projects.html">Projekte</a></li>
-      <li><a href="education.html">Werdegang</a></li>
-      <li><a href="contact.html">Kontakt</a></li>
-    </ul>
-  </nav>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
-  <main class="fade-in">
-    <img src="pictures/portrait.jpg" alt="Ali Natoura – Softwareentwickler und FTTx Consultant" class="portrait-img" width="150" height="150" loading="eager">
+  <header class="site-header">
+    <a class="monogram" href="#top" aria-label="Ali Natoura — Startseite">AN</a>
+    <button class="menu-button" aria-expanded="false" aria-controls="navigation">Menü</button>
+    <nav id="navigation" aria-label="Hauptnavigation">
+      <a href="#profil">Profil</a>
+      <a href="#projekte">Projekte</a>
+      <a href="#kompetenzen">Kompetenzen</a>
+      <a href="#werdegang">Werdegang</a>
+      <a class="nav-contact" href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
 
-    <header class="hero">
-      <h1>Ali Natoura</h1>
-      <p class="subtitle">Experienced Consultant (FTTx) · Softwareentwickler</p>
-      <p class="tagline">Java · Spring Boot · Python · GIS · Glasfaser-Netzplanung</p>
-      <div class="hero-actions">
-        <a href="projects.html" class="btn">Projekte ansehen</a>
-        <a href="contact.html" class="btn btn-outline">Kontakt aufnehmen</a>
+  <main id="inhalt">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Portfolio · 2026</p>
+        <div class="portrait-wrap">
+          <img src="portrait.jpg" width="152" height="152" alt="Portrait von Ali Natoura">
+          <span aria-hidden="true"></span>
+        </div>
+        <h1 id="hero-title">Ali <em>Natoura</em></h1>
+        <p class="role">Software Engineering <span>×</span> Fiber Infrastructure</p>
+        <p class="intro">Ich verbinde Softwareentwicklung mit realer Glasfaser-Infrastruktur – für automatisierte, nachvollziehbare und belastbare Planungsprozesse.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projekte">Projekte ansehen <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="#kontakt">Kontakt aufnehmen</a>
+        </div>
+        <ul class="proof-points" aria-label="Kernfokus">
+          <li>Python-Automatisierung</li>
+          <li>GIS &amp; Netzplanung</li>
+          <li>Java / Spring Boot</li>
+        </ul>
       </div>
-    </header>
 
-    <section class="quick-facts" aria-label="Kernkompetenzen">
-      <div class="fact-box">
-        <strong>5+ Jahre</strong><br>Java & Backend-Entwicklung
-      </div>
-      <div class="fact-box">
-        <strong>FTTx & GIS</strong><br>Automatisierung & Netzplanung
-      </div>
-      <div class="fact-box">
-        <strong>Python + Java</strong><br>Prozessautomatisierung & QS
-      </div>
-      <div class="fact-box">
-        <strong>ALTEN Germany</strong><br>seit März 2026
+      <div class="topology reveal" aria-label="Abstrakte Darstellung eines FTTx-Netzes">
+        <div class="topology-label">FTTx — Topologie</div>
+        <svg viewBox="0 0 820 485" role="img" aria-label="Netzverbindung von MFG über PDP zu Hausanschlüssen">
+          <defs>
+            <linearGradient id="fiber" x1="0" x2="1">
+              <stop offset="0%" stop-color="#2f73ff"/>
+              <stop offset="55%" stop-color="#74b5ff"/>
+              <stop offset="100%" stop-color="#c2e8ff"/>
+            </linearGradient>
+            <filter id="glow"><feGaussianBlur stdDeviation="3.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <g class="grid">
+            <path d="M22 40H800M22 110H800M22 180H800M22 250H800M22 320H800M22 390H800M22 460H800"/>
+            <path d="M80 20V472M180 20V472M280 20V472M380 20V472M480 20V472M580 20V472M680 20V472M780 20V472"/>
+          </g>
+          <g class="routes" fill="none" stroke="url(#fiber)" stroke-width="4" filter="url(#glow)">
+            <path d="M137 248H283C318 248 325 220 355 220H420"/>
+            <path d="M490 220H545C570 220 573 112 605 112H721"/>
+            <path d="M490 220H555C580 220 580 176 614 176H750"/>
+            <path d="M490 220H560C590 220 588 244 622 244H757"/>
+            <path d="M490 220H550C572 220 580 316 612 316H739"/>
+            <path d="M490 220H550C585 220 590 382 622 382H762"/>
+          </g>
+          <g class="drop-routes" fill="none" stroke="#497bc4" stroke-dasharray="3 8" stroke-width="2">
+            <path d="M717 112L775 70"/><path d="M749 176L785 150"/><path d="M756 244L786 265"/><path d="M738 316L780 335"/><path d="M760 382L793 412"/>
+          </g>
+          <g class="node">
+            <rect x="72" y="186" width="65" height="124" rx="4"/><path d="M84 203H125M84 219H125M84 235H125M84 252H125M84 268H125M84 284H125"/><text x="104" y="340">MFG</text>
+            <rect x="420" y="184" width="70" height="72" rx="3"/><path d="M434 202H476M434 218H476M434 234H476"/><text x="455" y="287">PDP</text>
+          </g>
+          <g class="splice" fill="#d7efff"><circle cx="284" cy="248" r="7"/><circle cx="545" cy="220" r="7"/><circle cx="605" cy="112" r="7"/><circle cx="614" cy="176" r="7"/><circle cx="622" cy="244" r="7"/><circle cx="612" cy="316" r="7"/><circle cx="622" cy="382" r="7"/></g>
+          <g class="house"><path d="M770 58l19-17 19 17v26h-38zM780 84V67h18v17"/><path d="M780 138l19-17 19 17v26h-38zM790 164v-17h18v17"/><path d="M781 253l19-17 19 17v26h-38zM791 279v-17h18v17"/><path d="M775 323l19-17 19 17v26h-38zM785 349v-17h18v17"/><path d="M787 400l19-17 19 17v26h-38zM797 426v-17h18v17"/></g>
+        </svg>
+        <div class="topology-key">
+          <span><i class="key-line"></i> Backbone / Distribution</span>
+          <span><i class="key-dot"></i> Spleiß- oder Übergabepunkt</span>
+          <span><i class="key-square"></i> Netzkomponente</span>
+        </div>
       </div>
     </section>
 
-    <section class="intro-card">
-      <h2>Profil</h2>
-      <p>
-        Leidenschaftlicher Softwareentwickler mit Fokus auf skalierbare Backend-Systeme, Microservices und RESTful APIs –
-        ergänzt durch fundierte Erfahrung in der Netzwerkplanung und Glasfaserinfrastruktur (FTTx).
-        Im OXG-Glasfaserprojekt verantworte ich die Automatisierung von Planungsprozessen, die Qualitätssicherung
-        sowie die fachliche Koordination im Team. Mein Anspruch: Abläufe effizienter und skalierbar gestalten.
-      </p>
+    <section class="statement" id="profil">
+      <p class="eyebrow">Mein Ansatz</p>
+      <h2>Komplexe Netze brauchen <em>klare Systeme.</em></h2>
+      <p>Mein Schwerpunkt liegt auf dem Punkt, an dem Fachplanung und Entwicklung zusammenkommen: wiederkehrende Prozesse vereinfachen, Datenqualität absichern und Entscheidungen nachvollziehbar machen.</p>
     </section>
 
-    <section class="cta-section">
-      <h2>Bereit für den nächsten Schritt?</h2>
-      <p>Schau dir meine technischen Skills und Projekte an oder nimm direkt Kontakt auf.</p>
-      <a href="contact.html" class="btn">Nachricht senden</a>
+    <section class="work" id="projekte" aria-labelledby="work-title">
+      <div class="section-head">
+        <div><p class="eyebrow">Ausgewählte Arbeit</p><h2 id="work-title">Was ich entwickle.</h2></div>
+        <p>Praxisnahe Werkzeuge und Abläufe für den Glasfaserausbau – aus Erfahrung in Planung, Qualitätssicherung und Softwareentwicklung.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="card-index">01</div>
+          <p class="card-type">Automatisierung</p>
+          <h3>FTTx-Planungs&shy;automatisierung</h3>
+          <p>Python-Lösungen für wiederkehrende Planungsaufgaben, Datenaufbereitung und automatisierte Prüfroutinen.</p>
+          <ul><li>Prozessautomatisierung</li><li>Validierung &amp; Datenqualität</li><li>GIS-gestützte Abläufe</li></ul>
+          <p class="technologies">Python · QGIS · Excel</p>
+        </article>
+        <article class="project-card">
+          <div class="card-index">02</div>
+          <p class="card-type">Planung &amp; Analyse</p>
+          <h3>GIS-gestützte Netz&shy;planung</h3>
+          <p>Räumliche Analysen als belastbare Grundlage für Trassen, Netzstruktur und fachliche Entscheidungen.</p>
+          <ul><li>Trassen- und Netzplanung</li><li>Qualitätssicherung</li><li>Koordination mehrerer Gebiete</li></ul>
+          <p class="technologies">FTTx · GIS · QGIS</p>
+        </article>
+        <article class="project-card">
+          <div class="card-index">03</div>
+          <p class="card-type">Software Engineering</p>
+          <h3>Desktop- &amp; Web&shy;automatisierung</h3>
+          <p>Java-basierte Anwendungen und Web-Automation für strukturierte, effizientere Arbeitsabläufe.</p>
+          <ul><li>Java / JavaFX</li><li>RESTful APIs &amp; Spring Boot</li><li>Selenium-Integration</li></ul>
+          <p class="technologies">Java · Spring Boot · Selenium</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="capabilities" id="kompetenzen" aria-labelledby="capabilities-title">
+      <div class="section-head">
+        <div><p class="eyebrow">Kompetenzen</p><h2 id="capabilities-title">Technik mit Kontext.</h2></div>
+      </div>
+      <div class="capability-grid">
+        <div><span>01</span><h3>Backend &amp; Integration</h3><p>Java, Spring Boot, Hibernate, REST, Microservices, SQL und relationale Datenbanken.</p></div>
+        <div><span>02</span><h3>Automation &amp; Qualität</h3><p>Python, Selenium, Testautomatisierung und Prüfroutinen für robustere Workflows.</p></div>
+        <div><span>03</span><h3>FTTx &amp; GIS</h3><p>Glasfaser-Netzplanung, GIS, QGIS, Netzwerktechnik und technische Dokumentation.</p></div>
+        <div><span>04</span><h3>Delivery &amp; Zusammenarbeit</h3><p>Git, Docker, Maven, Jenkins, agile Entwicklung und fachliche Koordination.</p></div>
+      </div>
+    </section>
+
+    <section class="career" id="werdegang" aria-labelledby="career-title">
+      <div class="section-head">
+        <div><p class="eyebrow">Beruflicher Werdegang</p><h2 id="career-title">Verantwortung, die wächst.</h2></div>
+      </div>
+      <ol class="timeline">
+        <li><time>seit 03/2026</time><div><h3>Experienced Consultant (FTTx)</h3><p class="company">ALTEN Germany</p><p>Automatisierung, Qualitätssicherung, GIS-Analysen und fachliche Koordination in Ausbauprojekten.</p></div></li>
+        <li><time>02/2022 — 02/2026</time><div><h3>Netzwerkplaner Glasfaserausbau</h3><p class="company">Adams Group</p><p>FTTx-Planung, Desktop-Tools, Web-Automation und Entwicklung mit Java, Spring Boot und JavaFX.</p></div></li>
+        <li><time>08/2021 — 01/2022</time><div><h3>IT-Juniorberater</h3><p class="company">Körber Supply Chain</p><p>Anwendungsentwicklung, Kundenanforderungen und IT-Designs im WMS-Umfeld.</p></div></li>
+        <li><time>seit 09/2024</time><div><h3>Wirtschaftsinformatik (berufsbegleitend)</h3><p class="company">Fachhochschule Dortmund</p><p>Studium parallel zur beruflichen Praxis.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="contact" id="kontakt" aria-labelledby="contact-title">
+      <p class="eyebrow">Kontakt</p>
+      <h2 id="contact-title">Lass uns über <em>gute Lösungen</em> sprechen.</h2>
+      <p>Für fachlichen Austausch, Software- und Automatisierungsthemen oder neue Projektperspektiven.</p>
+      <div class="contact-actions">
+        <a class="button button-primary" href="mailto:a.natoura@yahoo.com">E-Mail schreiben <span aria-hidden="true">→</span></a>
+        <a class="text-link" href="https://github.com/MAlinatoura" target="_blank" rel="noreferrer">GitHub ansehen ↗</a>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 Ali Natoura · <a href="https://github.com/MAlinatoura" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+  <footer>
+    <span>© 2026 Ali Natoura</span>
+    <span>Software Engineering × Fiber Infrastructure</span>
+    <a href="#top">Nach oben ↑</a>
   </footer>
-
-  <script src="js/script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
