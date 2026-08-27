@@ -2627,3 +2627,65 @@ footer a {
     animation: none;
   }
 }
+
+
+/* Unified carousel rail: one centered control, one visual hierarchy. */
+.process-carousel-controls,
+.skill-controls {
+  width: min(100%, 390px);
+  grid-template-columns: 100px minmax(72px, 1fr) 100px;
+  gap: 12px;
+}
+
+.carousel-instruction {
+  top: -4px;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.process-carousel-controls .process-nav,
+.skill-controls .skill-nav {
+  min-width: 100px;
+  padding-inline: 12px;
+  color: #d4e9fb;
+  background: rgba(14,40,66,.88);
+  border-color: #547da8;
+  box-shadow: none;
+}
+
+.process-carousel-controls .process-nav:last-child,
+.skill-controls .skill-nav:last-child {
+  color: #dff2ff;
+  background: linear-gradient(135deg, #1c527f, #174166);
+  border-color: #8fc7ff;
+  box-shadow: 0 0 18px rgba(143,199,255,.16);
+}
+
+.process-carousel-controls .process-nav:last-child small,
+.skill-controls .skill-nav:last-child small {
+  color: #dff2ff;
+}
+
+.process-carousel-controls .process-nav:hover,
+.process-carousel-controls .process-nav:focus-visible,
+.skill-controls .skill-nav:hover,
+.skill-controls .skill-nav:focus-visible {
+  color: #fff;
+  background: #245b8b;
+}
+
+@media (max-width: 760px) {
+  .process-carousel-controls,
+  .skill-controls {
+    grid-template-columns: 92px minmax(60px, 1fr) 92px;
+    gap: 8px;
+  }
+
+  .process-carousel-controls .process-nav,
+  .skill-controls .skill-nav {
+    min-width: 92px;
+    padding-inline: 10px;
+  }
+}
