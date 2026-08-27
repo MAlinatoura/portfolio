@@ -2689,3 +2689,39 @@ footer a {
     padding-inline: 10px;
   }
 }
+
+
+/* Clean carousel navigation: labels on controls are sufficient; no floating hint. */
+.carousel-instruction {
+  display: none !important;
+}
+
+.process-carousel-controls,
+.skill-controls {
+  display: flex;
+  width: auto;
+  max-width: none;
+  padding-top: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.process-carousel-controls .process-nav,
+.skill-controls .skill-nav {
+  flex: 0 0 auto;
+}
+
+.process-carousel-controls .process-dots,
+.skill-controls .skill-dots {
+  align-self: auto;
+  justify-self: auto;
+}
+
+@media (max-width: 760px) {
+  .process-carousel-controls,
+  .skill-controls {
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+}
