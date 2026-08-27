@@ -1181,3 +1181,206 @@ footer a {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* High-impact portfolio motifs: data signal, planning logic and fiber-inspired depth */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero-copy,
+.professional-panel {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-signal-art {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: clamp(-120px, -4vw, -30px);
+  width: min(47vw, 650px);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.signal-orb {
+  position: absolute;
+  inset: 17%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(135,204,255,.55);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 33% 30%, rgba(137,210,255,.7) 0 1%, transparent 2%),
+    radial-gradient(circle at 66% 63%, rgba(105,192,255,.55) 0 8%, transparent 9%),
+    radial-gradient(circle at 31% 66%, rgba(105,192,255,.4) 0 12%, transparent 13%),
+    radial-gradient(circle at 53% 35%, #163e63, #07111f 68%);
+  box-shadow: 0 0 75px rgba(76,164,246,.3), inset -45px -20px 60px rgba(1,8,16,.9);
+  animation: signal-orb-float 7s ease-in-out infinite;
+}
+
+.signal-orb::before,
+.signal-orb::after {
+  content: "";
+  position: absolute;
+  inset: 22% 0;
+  border-top: 1px solid rgba(164,217,255,.25);
+  border-bottom: 1px solid rgba(164,217,255,.25);
+  border-radius: 50%;
+}
+
+.signal-orb::after {
+  inset: 0 29%;
+  border: 1px solid rgba(164,217,255,.25);
+}
+
+.signal-orb i {
+  position: absolute;
+  color: #c8ecff;
+  font: 13px var(--mono);
+  font-style: normal;
+  text-shadow: 0 0 12px #81caff;
+  animation: hero-bit 4s ease-in-out infinite;
+}
+
+.signal-orb i:nth-child(1) { top: 23%; left: 27%; }
+.signal-orb i:nth-child(2) { top: 48%; right: 20%; animation-delay: -1.2s; }
+.signal-orb i:nth-child(3) { bottom: 21%; left: 41%; animation-delay: -2.3s; }
+
+.signal-ring {
+  position: absolute;
+  inset: 5%;
+  border: 1px solid rgba(123,194,250,.23);
+  border-radius: 50%;
+  transform: rotate(-22deg);
+  animation: signal-ring-spin 16s linear infinite;
+}
+
+.ring-b {
+  inset: 10% 2%;
+  transform: rotate(50deg);
+  animation-duration: 23s;
+  animation-direction: reverse;
+}
+
+.signal-route {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #88c9ff, transparent);
+  transform-origin: left;
+  animation: route-pulse 4s ease-in-out infinite;
+}
+
+.route-a { top: 33%; left: 0; width: 58%; transform: rotate(20deg); }
+.route-b { bottom: 31%; right: 0; width: 48%; transform: rotate(-28deg); animation-delay: -1.6s; }
+
+.statement {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.statement > :not(.statement-schematic) {
+  position: relative;
+  z-index: 1;
+}
+
+.statement-schematic {
+  position: absolute;
+  z-index: 0;
+  right: clamp(28px, 8vw, 150px);
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: .7;
+  color: #286bad;
+}
+
+.statement-schematic::before {
+  content: "";
+  position: absolute;
+  inset: -60px -90px;
+  background-image: linear-gradient(rgba(34,104,170,.09) 1px, transparent 1px), linear-gradient(90deg, rgba(34,104,170,.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse at center, #000 10%, transparent 70%);
+}
+
+.schematic-node,
+.statement-schematic i {
+  position: relative;
+  z-index: 1;
+}
+
+.schematic-node {
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  border: 1px solid rgba(30,94,157,.55);
+  border-radius: 50%;
+  background: rgba(244,240,232,.78);
+  box-shadow: 0 10px 28px rgba(34,91,145,.12);
+  font: 10px var(--mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.statement-schematic i {
+  width: 54px;
+  height: 1px;
+  background: linear-gradient(90deg, #2b74b9, #8dc5f6);
+}
+
+@keyframes signal-orb-float {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-13px) rotate(5deg); }
+}
+
+@keyframes signal-ring-spin {
+  to { transform: rotate(338deg); }
+}
+
+@keyframes hero-bit {
+  0%, 100% { opacity: .4; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-9px); }
+}
+
+@keyframes route-pulse {
+  0%, 100% { opacity: .2; transform-origin: left; }
+  50% { opacity: 1; transform: scaleX(1.12); transform-origin: right; }
+}
+
+@media (max-width: 1000px) {
+  .hero-signal-art {
+    right: -110px;
+    width: 580px;
+    opacity: .45;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-signal-art {
+    top: auto;
+    right: -80px;
+    bottom: 14px;
+    width: 390px;
+    transform: none;
+    opacity: .28;
+  }
+
+  .statement-schematic {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    justify-self: end;
+    margin-top: 14px;
+    transform: scale(.72);
+    transform-origin: right center;
+  }
+}
