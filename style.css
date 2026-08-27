@@ -1565,3 +1565,7 @@ footer a {
     flex: 0 1 28px;
   }
 }
+
+
+.mobile-role-break { display: none; }
+@media (max-width: 760px) { .mobile-role-break { display: block; } }
