@@ -1,1 +1,105 @@
-const menuButton=document.querySelector(".menu-button"),navigation=document.querySelector("#navigation");if(menuButton&&navigation){menuButton.addEventListener("click",()=>{const open=menuButton.getAttribute("aria-expanded")!=="true";menuButton.setAttribute("aria-expanded",String(open));navigation.classList.toggle("open",open)});navigation.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{menuButton.setAttribute("aria-expanded","false");navigation.classList.remove("open")}));}function setupPager(itemSelector,dotsSelector,prevSelector,nextSelector,dotClass){const items=[...document.querySelectorAll(itemSelector)],dotsHost=document.querySelector(dotsSelector);if(!items.length||!dotsHost)return;let active=0;items.forEach((item,i)=>{const dot=document.createElement("button");dot.type="button";dot.className=dotClass;dot.setAttribute("aria-label","Eintrag "+(i+1));dot.addEventListener("click",()=>set(i));dotsHost.append(dot)});const dots=[...dotsHost.children];function set(next){active=(next+items.length)%items.length;items.forEach((item,i)=>{const d=(i-active+items.length)%items.length;item.classList.toggle("is-active",i===active);item.classList.toggle("is-after",d===1);item.classList.toggle("is-before",d===items.length-1);});dots.forEach((dot,i)=>dot.setAttribute("aria-selected",String(i===active)));}document.querySelector(prevSelector)?.addEventListener("click",()=>set(active-1));document.querySelector(nextSelector)?.addEventListener("click",()=>set(active+1));set(0);}setupPager("[data-process-model]",".process-dots","[data-process-prev]","[data-process-next]","process-dot");setupPager("[data-skill-card]",".skill-dots","[data-skill-prev]","[data-skill-next]","skill-dot");document.querySelectorAll(".process-model").forEach(model=>model.querySelectorAll("[data-process-step]").forEach(step=>step.addEventListener("click",()=>model.querySelectorAll("[data-process-step]").forEach(x=>x.classList.toggle("is-active",x===step)))));const careerNodes=[...document.querySelectorAll("[data-career-node]")],spot=document.querySelector(".career-spotlight");if(careerNodes.length&&spot){const p=spot.querySelector(".spotlight-period"),f=spot.querySelector(".spotlight-focus"),r=spot.querySelector("h3"),c=spot.querySelector(".spotlight-company"),x=spot.querySelector(".spotlight-copy"),g=spot.querySelector(".spotlight-progress");careerNodes.forEach((n,i)=>n.addEventListener("click",()=>{careerNodes.forEach(q=>{q.classList.toggle("is-active",q===n);q.setAttribute("aria-selected",String(q===n));});p.textContent=n.dataset.period;f.textContent=n.dataset.focus;r.textContent=n.dataset.role;c.textContent=n.dataset.company;x.textContent=n.dataset.copy;g.innerHTML="<span>0"+(i+1)+"</span><i></i><span>04</span>";}));}
+/*
+ * Portfolio interactions
+ * Every controller is optional so sections remain functional when markup changes or JavaScript is unavailable.
+ */
+
+const menuButton = document.querySelector(".menu-button");
+const navigation = document.querySelector("#navigation");
+
+if (menuButton && navigation) {
+  menuButton.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") !== "true";
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    navigation.classList.toggle("open", isOpen);
+  });
+
+  navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menuButton.setAttribute("aria-expanded", "false");
+      navigation.classList.remove("open");
+    });
+  });
+}
+
+/** Creates accessible dot navigation for a single active item at a time. */
+function setupPager({ itemSelector, dotsSelector, previousSelector, nextSelector, dotClass }) {
+  const items = [...document.querySelectorAll(itemSelector)];
+  const dotsHost = document.querySelector(dotsSelector);
+  if (!items.length || !dotsHost) return;
+
+  let activeIndex = 0;
+  const dots = items.map((item, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = dotClass;
+    dot.setAttribute("aria-label", `Eintrag ${index + 1} anzeigen`);
+    dot.addEventListener("click", () => setActive(index));
+    dotsHost.append(dot);
+    return dot;
+  });
+
+  function setActive(nextIndex) {
+    activeIndex = (nextIndex + items.length) % items.length;
+    items.forEach((item, index) => {
+      const distance = (index - activeIndex + items.length) % items.length;
+      item.classList.toggle("is-active", index === activeIndex);
+      item.classList.toggle("is-after", distance === 1);
+      item.classList.toggle("is-before", distance === items.length - 1);
+      item.setAttribute("aria-hidden", String(index !== activeIndex));
+    });
+    dots.forEach((dot, index) => dot.setAttribute("aria-selected", String(index === activeIndex)));
+  }
+
+  document.querySelector(previousSelector)?.addEventListener("click", () => setActive(activeIndex - 1));
+  document.querySelector(nextSelector)?.addEventListener("click", () => setActive(activeIndex + 1));
+  setActive(0);
+}
+
+setupPager({ itemSelector: "[data-process-model]", dotsSelector: ".process-dots", previousSelector: "[data-process-prev]", nextSelector: "[data-process-next]", dotClass: "process-dot" });
+setupPager({ itemSelector: "[data-skill-card]", dotsSelector: ".skill-dots", previousSelector: "[data-skill-prev]", nextSelector: "[data-skill-next]", dotClass: "skill-dot" });
+
+// Only one delivery phase is expanded at a time within each model.
+document.querySelectorAll(".process-model").forEach((model) => {
+  model.querySelectorAll("[data-process-step]").forEach((step) => {
+    step.addEventListener("click", () => {
+      model.querySelectorAll("[data-process-step]").forEach((item) => item.classList.toggle("is-active", item === step));
+    });
+  });
+});
+
+// Career nodes update one shared spotlight instead of duplicating the same content in cards.
+const careerNodes = [...document.querySelectorAll("[data-career-node]")];
+const spotlight = document.querySelector(".career-spotlight");
+
+if (careerNodes.length && spotlight) {
+  const fields = {
+    period: spotlight.querySelector(".spotlight-period"),
+    focus: spotlight.querySelector(".spotlight-focus"),
+    role: spotlight.querySelector("h3"),
+    company: spotlight.querySelector(".spotlight-company"),
+    copy: spotlight.querySelector(".spotlight-copy"),
+    progress: spotlight.querySelector(".spotlight-progress")
+  };
+
+  careerNodes.forEach((node, index) => {
+    node.addEventListener("click", () => {
+      careerNodes.forEach((item) => {
+        const isSelected = item === node;
+        item.classList.toggle("is-active", isSelected);
+        item.setAttribute("aria-selected", String(isSelected));
+      });
+      fields.period.textContent = node.dataset.period;
+      fields.focus.textContent = node.dataset.focus;
+      fields.role.textContent = node.dataset.role;
+      fields.company.textContent = node.dataset.company;
+      fields.copy.textContent = node.dataset.copy;
+      fields.progress.replaceChildren();
+      ["0" + (index + 1), "04"].forEach((label, position) => {
+        const element = document.createElement(position === 1 ? "span" : "span");
+        element.textContent = label;
+        fields.progress.append(element);
+        if (position === 0) fields.progress.append(document.createElement("i"));
+      });
+    });
+  });
+}
