@@ -2480,3 +2480,150 @@ footer a {
     margin-bottom: 13px;
   }
 }
+
+
+/* Refined interaction placement: cues live on the controls, never between content blocks. */
+.process-carousel-controls::before,
+.skill-controls::before {
+  display: none;
+}
+
+.process-carousel-controls,
+.skill-controls {
+  position: relative;
+  grid-template-areas: "previous dots next";
+  padding-top: 20px;
+}
+
+.carousel-instruction {
+  position: absolute;
+  top: -2px;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  padding: 5px 8px;
+  color: #bce4ff;
+  background: rgba(93,166,231,.12);
+  border: 1px solid rgba(143,199,255,.32);
+  border-radius: 14px;
+  font-size: 8px;
+  box-shadow: 0 0 18px rgba(105,182,247,.08);
+}
+
+.carousel-instruction::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #8fc7ff;
+  box-shadow: 0 0 9px #8fc7ff;
+  animation: cue-light 2.2s ease-in-out infinite;
+}
+
+.process-carousel-controls .process-nav:last-child,
+.skill-controls .skill-nav:last-child {
+  color: #07111f;
+  background: #8fc7ff;
+  border-color: #bfe3ff;
+  box-shadow: 0 0 20px rgba(143,199,255,.2);
+  animation: next-action-pulse 2.8s ease-in-out infinite;
+}
+
+.process-carousel-controls .process-nav:last-child small,
+.skill-controls .skill-nav:last-child small {
+  color: #123758;
+}
+
+.process-dot[aria-selected=true],
+.skill-dot[aria-selected=true] {
+  box-shadow: 0 0 12px rgba(143,199,255,.8);
+  animation: selected-dot-pulse 2.2s ease-in-out infinite;
+}
+
+.career-explorer {
+  position: relative;
+  padding-top: 28px;
+}
+
+.career-instruction {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 5px 8px;
+  color: #bce4ff;
+  background: rgba(93,166,231,.11);
+  border: 1px solid rgba(143,199,255,.3);
+  border-radius: 14px;
+  font-size: 8px;
+  letter-spacing: .1em;
+}
+
+.career-instruction span {
+  color: #8fc7ff;
+}
+
+.path-node:not(.is-active) i {
+  animation: available-node 3.8s ease-in-out infinite;
+}
+
+.path-node:nth-of-type(2) i { animation-delay: .6s; }
+.path-node:nth-of-type(3) i { animation-delay: 1.2s; }
+.path-node:nth-of-type(4) i { animation-delay: 1.8s; }
+
+@keyframes cue-light {
+  0%, 100% { opacity: .4; transform: scale(.8); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes next-action-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(143,199,255,.18), 0 0 20px rgba(143,199,255,.18); }
+  50% { box-shadow: 0 0 0 7px rgba(143,199,255,0), 0 0 28px rgba(143,199,255,.3); }
+}
+
+@keyframes selected-dot-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes available-node {
+  0%, 72%, 100% { border-color: #4b719a; box-shadow: none; }
+  82% { border-color: #8fc7ff; box-shadow: 0 0 14px rgba(143,199,255,.28); }
+  90% { border-color: #4b719a; box-shadow: none; }
+}
+
+@media (max-width: 760px) {
+  .process-carousel-controls,
+  .skill-controls {
+    padding-top: 24px;
+  }
+
+  .carousel-instruction {
+    right: 50%;
+    transform: translateX(50%);
+    white-space: nowrap;
+  }
+
+  .career-explorer {
+    padding-top: 32px;
+  }
+
+  .career-instruction {
+    right: 50%;
+    transform: translateX(50%);
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-instruction::before,
+  .process-carousel-controls .process-nav:last-child,
+  .skill-controls .skill-nav:last-child,
+  .process-dot[aria-selected=true],
+  .skill-dot[aria-selected=true],
+  .path-node:not(.is-active) i {
+    animation: none;
+  }
+}
