@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260827-14">
+  <link rel="stylesheet" href="style.css?v=20260827-15">
 </head>
 <body>
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
@@ -29,57 +29,27 @@
 
   <main id="inhalt">
     <!-- Introduction and professional positioning -->
-    <section class="hero" id="top" aria-labelledby="hero-title"><div class="hero-signal-art" aria-hidden="true"><span class="signal-orb"><i>01</i><i>10</i><i>01</i></span><p class="hero-visual-label">DATA · NETWORKS · ENGINEERING</p><span class="signal-ring ring-a"></span><span class="signal-ring ring-b"></span><span class="signal-route route-a"></span><span class="signal-route route-b"></span></div>
-      <div class="hero-copy">
+    <section class="hero hero-editorial" id="top" aria-labelledby="hero-title">
+      <div class="hero-editorial__watermark" aria-hidden="true">AN</div>
+      <div class="hero-editorial__copy">
         <p class="eyebrow">Portfolio · 2026</p>
-        <div class="portrait-wrap">
-          <img src="portrait.jpg" width="152" height="152" alt="Portrait von Ali Natoura">
-          <span aria-hidden="true"></span>
+        <p class="hero-editorial__kicker">Experienced Consultant (FTTx) · Software Engineer</p>
+        <h1 id="hero-title">Ali<br><em>Natoura</em></h1>
+        <p class="hero-editorial__statement">Software, Daten und Infrastruktur – klar gedacht, sauber umgesetzt.</p>
+        <p class="hero-editorial__intro">Ich verbinde Softwareentwicklung mit realer Glasfaser-Infrastruktur, um Planungsprozesse nachvollziehbar, automatisiert und belastbar zu gestalten.</p>
+        <div class="hero-editorial__links">
+          <a href="#projekte">Schwerpunkte entdecken <span aria-hidden="true">↓</span></a>
+          <a href="#kontakt">Kontakt <span aria-hidden="true">↗</span></a>
         </div>
-        <h1 id="hero-title">Ali <em>Natoura</em></h1>
-        <p class="role">Software Engineering <span>×</span> Fiber Infrastructure</p>
-        <p class="intro">Ich verbinde Softwareentwicklung mit realer Glasfaser-Infrastruktur – für automatisierte, nachvollziehbare und belastbare Planungsprozesse.</p>
-        <div class="hero-actions hero-commands" aria-label="Portfolio-Navigation">
-          <a class="cta-command cta-command--primary" href="#projekte"><span class="cta-number">01</span><span class="cta-copy"><strong>Schwerpunkte ansehen</strong><small>Planung, Automatisierung und Software</small></span><span class="cta-arrow" aria-hidden="true">↘</span></a>
-          <a class="cta-command" href="#kontakt"><span class="cta-number">02</span><span class="cta-copy"><strong>Kontakt aufnehmen</strong><small>Fachlicher Austausch und Projekte</small></span><span class="cta-arrow" aria-hidden="true">↗</span></a>
-        </div>
-        <ul class="proof-points proof-signals" aria-label="Kernfokus">
-          <li><span>01</span>Python-Automatisierung</li>
-          <li><span>02</span>GIS &amp; Netzplanung</li>
-          <li><span>03</span>Java / Spring Boot</li>
-        </ul>
       </div>
-
-      <aside class="hero-atlas" aria-label="Fachliches Profil">
-        <figure class="atlas-frame">
-          <svg viewBox="0 0 640 520" role="img" aria-label="Abstrahierte FTTx-Systemkarte mit Datenwegen">
-            <defs>
-              <linearGradient id="atlasPath" x1="0" x2="1"><stop stop-color="#79c7ff"/><stop offset=".55" stop-color="#b6e5ff"/><stop offset="1" stop-color="#77b9f3"/></linearGradient>
-              <radialGradient id="atlasNode"><stop stop-color="#d5f0ff"/><stop offset=".35" stop-color="#7cc7fb"/><stop offset="1" stop-color="#235d8c"/></radialGradient>
-              <filter id="atlasGlow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            </defs>
-            <g class="atlas-grid"><path d="M20 80H620M20 160H620M20 240H620M20 320H620M20 400H620"/><path d="M100 20V480M220 20V480M340 20V480M460 20V480M580 20V480"/></g>
-            <g class="atlas-route" fill="none" stroke="url(#atlasPath)" stroke-linecap="round">
-              <path d="M78 90C160 90 148 195 260 195S350 117 430 117 505 220 574 220"/>
-              <path d="M78 90C133 90 148 302 260 302S345 405 445 405 492 320 574 320"/>
-              <path d="M260 195C330 195 345 302 420 302S487 220 574 220"/>
-              <path d="M260 302C320 302 337 380 445 405"/>
-            </g>
-            <g class="atlas-route atlas-route--ghost" fill="none" stroke="url(#atlasPath)" stroke-linecap="round"><path d="M78 90C160 90 148 195 260 195S350 117 430 117 505 220 574 220"/><path d="M78 90C133 90 148 302 260 302S345 405 445 405 492 320 574 320"/></g>
-            <g class="atlas-nodes">
-              <circle cx="78" cy="90" r="28"/><circle cx="260" cy="195" r="20"/><circle cx="260" cy="302" r="20"/><circle cx="430" cy="117" r="16"/><circle cx="445" cy="405" r="16"/><circle cx="574" cy="220" r="14"/><circle cx="574" cy="320" r="14"/>
-            </g>
-            <g class="atlas-labels"><text x="38" y="47">INPUT</text><text x="225" y="162">RULES</text><text x="224" y="344">DATA</text><text x="396" y="83">GIS</text><text x="410" y="446">BUILD</text><text x="545" y="192">QA</text><text x="535" y="355">OUTPUT</text></g>
-            <g class="atlas-bits"><text x="105" y="121">01</text><text x="318" y="169">10</text><text x="352" y="342">01</text><text x="496" y="270">10</text></g>
-          </svg>
-          <figcaption>FTTx SYSTEM MAP · DATA TO DELIVERY</figcaption>
-        </figure>
-        <div class="atlas-insights">
-          <p><span>01</span><strong>Automatisierung</strong><small>Python, QGIS und Validierung</small></p>
-          <p><span>02</span><strong>Netzintelligenz</strong><small>GIS, FTTx-Strukturen und Datenqualität</small></p>
-          <p><span>03</span><strong>Software Engineering</strong><small>Java, Spring Boot und Integration</small></p>
-        </div>
-        <div class="atlas-role"><span>AKTUELLE ROLLE</span><div><strong>Experienced Consultant (FTTx)</strong><small>ALTEN Germany · seit 03/2026</small></div></div>
+      <figure class="hero-editorial__portrait">
+        <div class="portrait-image"><img src="portrait.jpg" width="520" height="650" alt="Portrait von Ali Natoura"></div>
+        <figcaption><span>01 — Persönliches Portfolio</span><span>Deutschland · 2026</span></figcaption>
+      </figure>
+      <aside class="hero-editorial__facts" aria-label="Profil auf einen Blick">
+        <div><span>Fokus</span><strong>Automatisierung · GIS · FTTx</strong></div>
+        <div><span>Engineering</span><strong>Java · Spring Boot · Python</strong></div>
+        <div><span>Aktuell</span><strong>ALTEN Germany</strong></div>
       </aside>
     </section>
 
@@ -144,6 +114,6 @@
     <span>Software Engineering × Fiber Infrastructure</span>
     <a href="#top">Nach oben ↑</a>
   </footer>
-  <script src="script.js?v=20260827-14"></script>
+  <script src="script.js?v=20260827-15"></script>
 </body>
 </html>
