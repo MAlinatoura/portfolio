@@ -2757,7 +2757,7 @@ footer a {
   font: 13px var(--mono);
   text-shadow: 0 0 12px rgba(116,195,255,.85);
   opacity: 0;
-  animation: binary-rain .9s cubic-bezier(.2,.8,.25,1) var(--delay) forwards;
+  animation: binary-rain 1.35s cubic-bezier(.2,.8,.25,1) var(--delay) forwards;
 }
 
 .entry-orb {
@@ -2794,7 +2794,7 @@ footer a {
   opacity: 1;
   transform: scale(1);
   transition: opacity .35s ease, transform .45s cubic-bezier(.16,1,.3,1);
-  animation: entry-orb-breathe .85s ease-in-out .35s both;
+  animation: entry-orb-breathe 1.4s ease-in-out .35s both;
 }
 
 .entry-name {
