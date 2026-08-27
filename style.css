@@ -1482,3 +1482,86 @@ footer a {
     transform-origin: center;
   }
 }
+
+
+/* Mobile readability repair: prevent any heading or diagram from escaping the viewport. */
+@media (max-width: 760px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .statement,
+  .case-studies,
+  .capabilities,
+  .career,
+  .contact,
+  .hero {
+    min-width: 0;
+  }
+
+  .statement > *,
+  .case-intro > *,
+  .section-head > *,
+  .career-hero > *,
+  .career-spotlight,
+  .capability-card {
+    min-width: 0;
+  }
+
+  .statement h2,
+  .case-intro h2,
+  .section-head h2,
+  .career-hero h2,
+  .contact h2 {
+    max-width: 100%;
+    font-size: clamp(34px, 10vw, 42px);
+    line-height: 1.07;
+    letter-spacing: -.04em;
+    overflow-wrap: anywhere;
+  }
+
+  .career-spotlight h3 {
+    max-width: 100%;
+    font-size: clamp(30px, 9vw, 38px);
+    line-height: 1.06;
+    letter-spacing: -.045em;
+    overflow-wrap: anywhere;
+  }
+
+  .career-path {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .path-node {
+    min-width: 0;
+  }
+
+  .path-node span {
+    overflow-wrap: anywhere;
+  }
+
+  .statement-schematic {
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    margin: 4px 0 18px;
+    transform: none;
+  }
+
+  .statement-schematic::before {
+    inset: -30px;
+  }
+
+  .schematic-node {
+    width: 64px;
+    height: 64px;
+    font-size: 8px;
+    flex: 0 0 64px;
+  }
+
+  .statement-schematic i {
+    width: min(28px, 7vw);
+    flex: 0 1 28px;
+  }
+}
