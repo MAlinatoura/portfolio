@@ -103,3 +103,29 @@ if (careerNodes.length && spotlight) {
     });
   });
 }
+
+
+// Opening sequence: lightweight binary particles converge into a data sphere before the hero appears.
+const entrySequence = document.querySelector(".entry-sequence");
+
+if (entrySequence && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const binaryField = entrySequence.querySelector(".entry-binary");
+  const particleCount = 52;
+
+  for (let index = 0; index < particleCount; index += 1) {
+    const digit = document.createElement("span");
+    const angle = Math.random() * Math.PI * 2;
+    const radius = Math.sqrt(Math.random()) * 112;
+    digit.className = "entry-digit";
+    digit.textContent = Math.random() > 0.5 ? "1" : "0";
+    digit.style.setProperty("--start-x", `${Math.round((Math.random() - 0.5) * 105)}vw`);
+    digit.style.setProperty("--target-x", `${Math.round(Math.cos(angle) * radius)}px`);
+    digit.style.setProperty("--target-y", `${Math.round(Math.sin(angle) * radius)}px`);
+    digit.style.setProperty("--delay", `${Math.round(Math.random() * 420)}ms`);
+    binaryField.append(digit);
+  }
+
+  window.setTimeout(() => entrySequence.classList.add("is-formed"), 920);
+  window.setTimeout(() => entrySequence.classList.add("is-exiting"), 1950);
+  window.setTimeout(() => entrySequence.remove(), 2550);
+}
