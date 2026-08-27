@@ -1384,3 +1384,101 @@ footer a {
     transform-origin: right center;
   }
 }
+
+
+/* Palette correction: a single blue/cyan family, deliberately calm on every viewport */
+:root {
+  --blue: #86c7ff;
+  --blue-soft: #b9e0ff;
+  --blue-deep: #153c61;
+  --cyan: #8fd7e8;
+}
+
+.spring-mark {
+  color: var(--cyan);
+}
+
+.signal-line {
+  background: linear-gradient(90deg, #86c7ff 0 38%, transparent 38% 48%, #8fd7e8 48% 100%);
+}
+
+.hero-visual-label {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 5%;
+  margin: 0;
+  color: var(--blue-soft);
+  font: 9px var(--mono);
+  letter-spacing: .15em;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  text-shadow: 0 0 15px rgba(134,199,255,.8);
+}
+
+@media (max-width: 760px) {
+  /* The hero visual becomes a real content module: prominent, legible and not a hidden background. */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-copy {
+    order: 1;
+  }
+
+  .hero-signal-art {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    order: 2;
+    width: 100%;
+    height: 270px;
+    margin: 18px 0 30px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .professional-panel {
+    order: 3;
+  }
+
+  .signal-orb {
+    inset: 13% 25%;
+  }
+
+  .signal-ring {
+    inset: 4% 16%;
+  }
+
+  .ring-b {
+    inset: 10% 11%;
+  }
+
+  .route-a {
+    top: 35%;
+    width: 48%;
+  }
+
+  .route-b {
+    bottom: 34%;
+    width: 43%;
+  }
+
+  .hero-visual-label {
+    bottom: 2px;
+    font-size: 8px;
+  }
+
+  .statement-schematic {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0 4px;
+    opacity: .9;
+    transform: scale(.84);
+    transform-origin: center;
+  }
+}
