@@ -125,7 +125,7 @@ if (entrySequence && !window.matchMedia("(prefers-reduced-motion: reduce)").matc
     binaryField.append(digit);
   }
 
-  window.setTimeout(() => entrySequence.classList.add("is-formed"), 920);
-  window.setTimeout(() => entrySequence.classList.add("is-exiting"), 1950);
-  window.setTimeout(() => entrySequence.remove(), 2550);
+  window.setTimeout(() => entrySequence.classList.add("is-formed"), 1450);
+  window.setTimeout(() => entrySequence.classList.add("is-exiting"), 3450);
+  window.setTimeout(() => entrySequence.remove(), 4100);
 }
