@@ -2387,3 +2387,96 @@ footer a {
     animation: none;
   }
 }
+
+
+/* Explicit controls: labels explain navigation before any animation is noticed. */
+.process-carousel-controls,
+.skill-controls {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "instruction instruction instruction" "previous dots next";
+  justify-content: stretch;
+  gap: 10px 16px;
+  max-width: 450px;
+  margin-inline: auto;
+}
+
+.carousel-instruction {
+  grid-area: instruction;
+  margin: 0 0 2px;
+  color: #a9cef4;
+  font: 10px var(--mono);
+  letter-spacing: .1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.process-carousel-controls .process-nav,
+.skill-controls .skill-nav {
+  width: auto;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 18px;
+}
+
+.process-carousel-controls .process-nav:first-of-type,
+.skill-controls .skill-nav:first-of-type { grid-area: previous; }
+
+.process-carousel-controls .process-nav:last-child,
+.skill-controls .skill-nav:last-child { grid-area: next; }
+
+.process-carousel-controls .process-dots,
+.skill-controls .skill-dots {
+  grid-area: dots;
+  align-self: center;
+  justify-self: center;
+}
+
+.process-nav small,
+.skill-nav small {
+  color: #cbdced;
+  font: 10px var(--mono);
+  letter-spacing: .05em;
+}
+
+.career-instruction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  color: #91c9fa;
+  font: 10px var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.career-instruction span {
+  display: inline-block;
+  animation: instruction-bounce 2.2s ease-in-out infinite;
+}
+
+@keyframes instruction-bounce {
+  0%, 100% { transform: translateY(0); opacity: .6; }
+  50% { transform: translateY(4px); opacity: 1; }
+}
+
+@media (max-width: 760px) {
+  .process-carousel-controls,
+  .skill-controls {
+    max-width: 100%;
+  }
+
+  .process-carousel-controls::before,
+  .skill-controls::before {
+    display: none;
+  }
+
+  .career-instruction {
+    margin-bottom: 13px;
+  }
+}
