@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=20260827-6">
+  <link rel="stylesheet" href="../style.css?v=20260827-7">
 </head>
 <body>
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
@@ -67,10 +67,27 @@
       <div class="section-head"><div><p class="eyebrow">Kompetenzen</p><h2 id="capabilities-title">Technik mit <em>Kontext.</em></h2></div><p>Vier Kompetenzfelder, die meine Arbeit an der Schnittstelle von Software und Infrastruktur prägen.</p></div>
       <div class="capability-carousel" aria-roledescription="Kompetenzbereiche">
         <div class="capability-stage">
-          <article class="capability-card is-active" data-skill-card tabindex="0"><span class="skill-icon" aria-hidden="true">⌘</span><p class="card-index">01</p><h3>Backend &amp; Integration</h3><p>Java, Spring Boot, Hibernate, REST, Microservices, SQL und relationale Datenbanken.</p></article>
-          <article class="capability-card" data-skill-card tabindex="-1"><span class="skill-icon" aria-hidden="true">↗</span><p class="card-index">02</p><h3>Automation &amp; Qualität</h3><p>Python, Selenium, Testautomatisierung und Prüfroutinen für robustere Workflows.</p></article>
-          <article class="capability-card" data-skill-card tabindex="-1"><span class="skill-icon" aria-hidden="true">◌</span><p class="card-index">03</p><h3>FTTx &amp; GIS</h3><p>Glasfaser-Netzplanung, GIS, QGIS, Netzwerktechnik und technische Dokumentation.</p></article>
-          <article class="capability-card" data-skill-card tabindex="-1"><span class="skill-icon" aria-hidden="true">◎</span><p class="card-index">04</p><h3>Delivery &amp; Zusammenarbeit</h3><p>Git, Docker, Maven, Jenkins, agile Entwicklung und fachliche Koordination.</p></article>
+          <!-- Brand marks are vector/CSS-based so the portfolio has no fragile external image dependencies. -->
+          <article class="capability-card is-active" data-skill-card tabindex="0">
+            <div class="technology-visual backend-visual" aria-hidden="true">
+              <div class="brand-mark java-mark"><svg viewBox="0 0 48 48"><path d="M18 33c0 4 12 4 12 0M20 27h10c2 0 3 2 1 4-3 3-10 3-13 0-2-2 0-4 2-4ZM24 9c-4 5 5 5 0 11M30 12c-3 4 4 4 0 8M15 14c-3 4 4 4 0 8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/><path d="M16 36h18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg><span>Java</span></div>
+              <div class="brand-mark spring-mark"><svg viewBox="0 0 48 48"><path d="M11 28c10-17 22-15 27-13-2 12-9 20-20 20-4 0-6-2-7-7Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"/><path d="M16 29c7-1 12-6 17-11M20 28c4 0 7 1 10 3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg><span>Spring<br>Boot</span></div>
+              <span class="signal-line"></span>
+            </div>
+            <p class="card-index">01</p><h3>Backend &amp; Integration</h3><p>Java, Spring Boot, Hibernate, REST, Microservices, SQL und relationale Datenbanken.</p>
+          </article>
+          <article class="capability-card" data-skill-card tabindex="-1">
+            <div class="technology-visual automation-visual" aria-hidden="true"><span>&lt;/&gt;</span><i></i><i></i><i></i></div>
+            <p class="card-index">02</p><h3>Automation &amp; Qualität</h3><p>Python, Selenium, Testautomatisierung und Prüfroutinen für robustere Workflows.</p>
+          </article>
+          <article class="capability-card" data-skill-card tabindex="-1">
+            <div class="technology-visual globe-visual" aria-hidden="true"><div class="globe"><b>0</b><b>1</b><b>0</b><b>1</b><span class="longitude"></span><span class="latitude"></span></div><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span></div>
+            <p class="card-index">03</p><h3>FTTx &amp; GIS</h3><p>Glasfaser-Netzplanung, GIS, QGIS, Netzwerktechnik und technische Dokumentation.</p>
+          </article>
+          <article class="capability-card" data-skill-card tabindex="-1">
+            <div class="technology-visual delivery-visual" aria-hidden="true"><span>01</span><i></i><span>10</span><i></i><span>11</span></div>
+            <p class="card-index">04</p><h3>Delivery &amp; Zusammenarbeit</h3><p>Git, Docker, Maven, Jenkins, agile Entwicklung und fachliche Koordination.</p>
+          </article>
         </div>
         <div class="skill-controls"><button class="skill-nav" type="button" data-skill-prev aria-label="Vorherige Kompetenz">←</button><div class="skill-dots" role="tablist" aria-label="Kompetenz wählen"></div><button class="skill-nav" type="button" data-skill-next aria-label="Nächste Kompetenz">→</button></div>
       </div>
@@ -97,6 +114,6 @@
     <span>Software Engineering × Fiber Infrastructure</span>
     <a href="#top">Nach oben ↑</a>
   </footer>
-  <script src="../script.js?v=20260827-6"></script>
+  <script src="../script.js?v=20260827-7"></script>
 </body>
 </html>
