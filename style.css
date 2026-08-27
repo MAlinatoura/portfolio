@@ -1997,3 +1997,7 @@ footer a {
   .atlas-role { display: block; }
   .atlas-role > span { margin-bottom: 7px; }
 }
+
+
+/* One decisive hero visual: the FTTx map is the sole focal point. */
+.hero-signal-art { display: none !important; }
