@@ -189,15 +189,6 @@ h1 em,h2 em {
   font:10px var(--mono);
   color:#b7cae0
 }
-.professional-panel {
-  padding:8px 0 8px 36px;
-  border-left:1px solid #6fa7dd
-}
-.professional-panel h2 {
-  font:600 clamp(34px,3.5vw,56px)/1.05 var(--serif);
-  letter-spacing:-.04em;
-  margin-bottom:18px
-}
 .panel-intro {
   color:#bdcde0;
   margin-bottom:28px
@@ -610,9 +601,6 @@ footer a {
   .hero {
     grid-template-columns:1fr
   }
-  .professional-panel {
-    max-width:680px
-  }
   .process-line {
     grid-template-columns:1fr 1fr
   }
@@ -670,11 +658,6 @@ footer a {
   }
   .statement,.contact {
     padding:75px 24px
-  }
-  .professional-panel {
-    padding:27px 0 0;
-    border-left:0;
-    border-top:1px solid #6fa7dd
   }
   .case-intro,.career-hero {
     display:block;
@@ -751,20 +734,9 @@ footer a {
     padding:20px 24px
   }
 }
-
-.professional-panel {
-  max-width:620px;
-  padding:0;
-  border:0
-}
 .panel-heading {
   padding-bottom:24px;
   border-bottom:1px solid var(--line)
-}
-.professional-panel h2 {
-  font:600 clamp(38px,4.1vw,62px)/1.02 var(--serif);
-  letter-spacing:-.045em;
-  margin:0
 }
 .panel-intro {
   max-width:530px;
@@ -831,13 +803,6 @@ footer a {
   font-size:12px
 }
 @media(max-width:760px) {
-  .professional-panel {
-    padding:0;
-    border:0
-  }
-  .professional-panel h2 {
-    font-size:40px
-  }
   .expertise-grid {
     grid-template-columns:1fr
   }
@@ -1190,23 +1155,6 @@ footer a {
   overflow: hidden;
 }
 
-.hero-copy,
-.professional-panel {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-signal-art {
-  position: absolute;
-  z-index: 0;
-  top: 50%;
-  right: clamp(-120px, -4vw, -30px);
-  width: min(47vw, 650px);
-  aspect-ratio: 1;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
 .signal-orb {
   position: absolute;
   inset: 17%;
@@ -1356,24 +1304,7 @@ footer a {
   50% { opacity: 1; transform: scaleX(1.12); transform-origin: right; }
 }
 
-@media (max-width: 1000px) {
-  .hero-signal-art {
-    right: -110px;
-    width: 580px;
-    opacity: .45;
-  }
-}
-
 @media (max-width: 760px) {
-  .hero-signal-art {
-    top: auto;
-    right: -80px;
-    bottom: 14px;
-    width: 390px;
-    transform: none;
-    opacity: .28;
-  }
-
   .statement-schematic {
     position: relative;
     right: auto;
@@ -1422,27 +1353,6 @@ footer a {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .hero-copy {
-    order: 1;
-  }
-
-  .hero-signal-art {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    order: 2;
-    width: 100%;
-    height: 270px;
-    margin: 18px 0 30px;
-    opacity: 1;
-    transform: none;
-  }
-
-  .professional-panel {
-    order: 3;
   }
 
   .signal-orb {
@@ -1751,16 +1661,6 @@ footer a {
     gap: 72px;
     padding-block: 78px;
   }
-
-  .hero-signal-art {
-    right: -70px;
-    width: 570px;
-    opacity: .32;
-  }
-
-  .professional-panel {
-    max-width: 680px;
-  }
 }
 
 @media (max-width: 760px) {
@@ -1997,10 +1897,6 @@ footer a {
   .atlas-role { display: block; }
   .atlas-role > span { margin-bottom: 7px; }
 }
-
-
-/* One decisive hero visual: the FTTx map is the sole focal point. */
-.hero-signal-art { display: none !important; }
 
 
 /* Editorial hero: portrait and typography are the one, personal signature. */
@@ -2401,16 +2297,6 @@ footer a {
   margin-inline: auto;
 }
 
-.carousel-instruction {
-  grid-area: instruction;
-  margin: 0 0 2px;
-  color: #a9cef4;
-  font: 10px var(--mono);
-  letter-spacing: .1em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 .process-carousel-controls .process-nav,
 .skill-controls .skill-nav {
   width: auto;
@@ -2495,33 +2381,6 @@ footer a {
   padding-top: 20px;
 }
 
-.carousel-instruction {
-  position: absolute;
-  top: -2px;
-  right: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin: 0;
-  padding: 5px 8px;
-  color: #bce4ff;
-  background: rgba(93,166,231,.12);
-  border: 1px solid rgba(143,199,255,.32);
-  border-radius: 14px;
-  font-size: 8px;
-  box-shadow: 0 0 18px rgba(105,182,247,.08);
-}
-
-.carousel-instruction::before {
-  content: "";
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #8fc7ff;
-  box-shadow: 0 0 9px #8fc7ff;
-  animation: cue-light 2.2s ease-in-out infinite;
-}
-
 .process-carousel-controls .process-nav:last-child,
 .skill-controls .skill-nav:last-child {
   color: #07111f;
@@ -2573,10 +2432,6 @@ footer a {
 .path-node:nth-of-type(3) i { animation-delay: 1.2s; }
 .path-node:nth-of-type(4) i { animation-delay: 1.8s; }
 
-@keyframes cue-light {
-  0%, 100% { opacity: .4; transform: scale(.8); }
-  50% { opacity: 1; transform: scale(1.15); }
-}
 
 @keyframes next-action-pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(143,199,255,.18), 0 0 20px rgba(143,199,255,.18); }
@@ -2600,12 +2455,6 @@ footer a {
     padding-top: 24px;
   }
 
-  .carousel-instruction {
-    right: 50%;
-    transform: translateX(50%);
-    white-space: nowrap;
-  }
-
   .career-explorer {
     padding-top: 32px;
   }
@@ -2618,7 +2467,6 @@ footer a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .carousel-instruction::before,
   .process-carousel-controls .process-nav:last-child,
   .skill-controls .skill-nav:last-child,
   .process-dot[aria-selected=true],
@@ -2635,14 +2483,6 @@ footer a {
   width: min(100%, 390px);
   grid-template-columns: 100px minmax(72px, 1fr) 100px;
   gap: 12px;
-}
-
-.carousel-instruction {
-  top: -4px;
-  right: auto;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
 }
 
 .process-carousel-controls .process-nav,
@@ -2690,11 +2530,6 @@ footer a {
   }
 }
 
-
-/* Clean carousel navigation: labels on controls are sufficient; no floating hint. */
-.carousel-instruction {
-  display: none !important;
-}
 
 .process-carousel-controls,
 .skill-controls {
@@ -2757,7 +2592,7 @@ footer a {
   font: 13px var(--mono);
   text-shadow: 0 0 12px rgba(116,195,255,.85);
   opacity: 0;
-  animation: binary-rain 1.35s cubic-bezier(.2,.8,.25,1) var(--delay) forwards;
+  animation: binary-rain .85s cubic-bezier(.2,.8,.25,1) var(--delay) forwards;
 }
 
 .entry-orb {
@@ -2794,7 +2629,7 @@ footer a {
   opacity: 1;
   transform: scale(1);
   transition: opacity .35s ease, transform .45s cubic-bezier(.16,1,.3,1);
-  animation: entry-orb-breathe 1.4s ease-in-out .35s both;
+  animation: entry-orb-breathe .9s ease-in-out .2s both;
 }
 
 .entry-name {
@@ -2812,8 +2647,28 @@ footer a {
 .entry-sequence.is-formed .entry-name {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity .45s ease .42s, transform .45s ease .42s;
+  transition: opacity .4s ease .18s, transform .4s ease .18s;
 }
+
+.entry-hint {
+  position: absolute;
+  bottom: 5vh;
+  margin: 0;
+  color: rgba(169,206,244,.62);
+  font: 10px var(--mono);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  opacity: 0;
+  /* Offered early: the hint is only useful while the sequence is still running. */
+  animation: entry-hint-in .35s ease .3s forwards;
+}
+
+@keyframes entry-hint-in {
+  to { opacity: 1; }
+}
+
+/* The sequence is an introduction, not a toll gate: it plays once per session. */
+[data-entry=seen] .entry-sequence { display: none; }
 
 .entry-sequence.is-exiting {
   opacity: 0;

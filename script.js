@@ -21,57 +21,95 @@ if (menuButton && navigation) {
   });
 }
 
-/** Creates accessible dot navigation for a single active item at a time. */
-function setupPager({ itemSelector, dotsSelector, previousSelector, nextSelector, dotClass }) {
-  const items = [...document.querySelectorAll(itemSelector)];
+/** Moves focus along a tablist with the arrow keys, as expected of the tab role. */
+function bindRovingKeys(tabs, activate) {
+  const offsets = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("keydown", (event) => {
+      const target = event.key in offsets ? index + offsets[event.key]
+        : event.key === "Home" ? 0
+        : event.key === "End" ? tabs.length - 1
+        : null;
+      if (target === null) return;
+      event.preventDefault();
+      activate((target + tabs.length) % tabs.length, { focus: true });
+    });
+  });
+}
+
+/**
+ * Builds dot navigation for a set of panels where exactly one is visible.
+ * Hidden panels are made inert so keyboard focus never lands inside them.
+ */
+function setupPager({ itemSelector, dotsSelector, previousSelector, nextSelector, dotClass, label }) {
+  const panels = [...document.querySelectorAll(itemSelector)];
   const dotsHost = document.querySelector(dotsSelector);
-  if (!items.length || !dotsHost) return;
+  if (!panels.length || !dotsHost) return;
 
   let activeIndex = 0;
-  const dots = items.map((item, index) => {
+  const dots = panels.map((panel, index) => {
     const dot = document.createElement("button");
     dot.type = "button";
     dot.className = dotClass;
-    dot.setAttribute("aria-label", `Eintrag ${index + 1} anzeigen`);
-    dot.addEventListener("click", () => setActive(index));
+    dot.id = `${panel.id}-tab`;
+    dot.setAttribute("role", "tab");
+    dot.setAttribute("aria-controls", panel.id);
+    dot.setAttribute("aria-label", `${label} ${index + 1} von ${panels.length}`);
+    dot.addEventListener("click", () => setActive(index, { focus: true }));
     dotsHost.append(dot);
+    panel.setAttribute("aria-labelledby", dot.id);
     return dot;
   });
 
-  function setActive(nextIndex) {
-    activeIndex = (nextIndex + items.length) % items.length;
-    items.forEach((item, index) => {
-      const distance = (index - activeIndex + items.length) % items.length;
-      item.classList.toggle("is-active", index === activeIndex);
-      item.classList.toggle("is-after", distance === 1);
-      item.classList.toggle("is-before", distance === items.length - 1);
-      item.setAttribute("aria-hidden", String(index !== activeIndex));
+  function setActive(nextIndex, { focus = false } = {}) {
+    activeIndex = (nextIndex + panels.length) % panels.length;
+    panels.forEach((panel, index) => {
+      const isActive = index === activeIndex;
+      const distance = (index - activeIndex + panels.length) % panels.length;
+      panel.classList.toggle("is-active", isActive);
+      panel.classList.toggle("is-after", distance === 1);
+      panel.classList.toggle("is-before", distance === panels.length - 1);
+      // inert removes the panel from both the tab order and the accessibility tree,
+      // so unlike aria-hidden it cannot leave focusable controls stranded in hidden content.
+      panel.toggleAttribute("inert", !isActive);
     });
-    dots.forEach((dot, index) => dot.setAttribute("aria-selected", String(index === activeIndex)));
+    dots.forEach((dot, index) => {
+      const isActive = index === activeIndex;
+      dot.setAttribute("aria-selected", String(isActive));
+      dot.tabIndex = isActive ? 0 : -1;
+    });
+    if (focus) dots[activeIndex].focus();
   }
 
+  dotsHost.setAttribute("aria-orientation", "horizontal");
+  bindRovingKeys(dots, setActive);
   document.querySelector(previousSelector)?.addEventListener("click", () => setActive(activeIndex - 1));
   document.querySelector(nextSelector)?.addEventListener("click", () => setActive(activeIndex + 1));
   setActive(0);
 }
 
-setupPager({ itemSelector: "[data-process-model]", dotsSelector: ".process-dots", previousSelector: "[data-process-prev]", nextSelector: "[data-process-next]", dotClass: "process-dot" });
-setupPager({ itemSelector: "[data-skill-card]", dotsSelector: ".skill-dots", previousSelector: "[data-skill-prev]", nextSelector: "[data-skill-next]", dotClass: "skill-dot" });
+setupPager({ itemSelector: "[data-process-model]", dotsSelector: ".process-dots", previousSelector: "[data-process-prev]", nextSelector: "[data-process-next]", dotClass: "process-dot", label: "Schwerpunkt" });
+setupPager({ itemSelector: "[data-skill-card]", dotsSelector: ".skill-dots", previousSelector: "[data-skill-prev]", nextSelector: "[data-skill-next]", dotClass: "skill-dot", label: "Kompetenz" });
 
 // Only one delivery phase is expanded at a time within each model.
 document.querySelectorAll(".process-model").forEach((model) => {
-  model.querySelectorAll("[data-process-step]").forEach((step) => {
+  const steps = [...model.querySelectorAll("[data-process-step]")];
+  steps.forEach((step) => {
     step.addEventListener("click", () => {
-      model.querySelectorAll("[data-process-step]").forEach((item) => item.classList.toggle("is-active", item === step));
+      steps.forEach((item) => {
+        const isActive = item === step;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-expanded", String(isActive));
+      });
     });
   });
 });
 
 // Career nodes update one shared spotlight instead of duplicating the same content in cards.
-const careerNodes = [...document.querySelectorAll("[data-career-node]")];
+const careerTabs = [...document.querySelectorAll("[data-career-node]")];
 const spotlight = document.querySelector(".career-spotlight");
 
-if (careerNodes.length && spotlight) {
+if (careerTabs.length && spotlight) {
   const fields = {
     period: spotlight.querySelector(".spotlight-period"),
     focus: spotlight.querySelector(".spotlight-focus"),
@@ -81,34 +119,63 @@ if (careerNodes.length && spotlight) {
     progress: spotlight.querySelector(".spotlight-progress")
   };
 
-  careerNodes.forEach((node, index) => {
-    node.addEventListener("click", () => {
-      careerNodes.forEach((item) => {
-        const isSelected = item === node;
-        item.classList.toggle("is-active", isSelected);
-        item.setAttribute("aria-selected", String(isSelected));
-      });
-      fields.period.textContent = node.dataset.period;
-      fields.focus.textContent = node.dataset.focus;
-      fields.role.textContent = node.dataset.role;
-      fields.company.textContent = node.dataset.company;
-      fields.copy.textContent = node.dataset.copy;
-      fields.progress.replaceChildren();
-      ["0" + (index + 1), "04"].forEach((label, position) => {
-        const element = document.createElement(position === 1 ? "span" : "span");
-        element.textContent = label;
-        fields.progress.append(element);
-        if (position === 0) fields.progress.append(document.createElement("i"));
-      });
+  function showStation(index, { focus = false } = {}) {
+    const tab = careerTabs[index];
+    careerTabs.forEach((item) => {
+      const isActive = item === tab;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-selected", String(isActive));
+      item.tabIndex = isActive ? 0 : -1;
     });
-  });
+    fields.period.textContent = tab.dataset.period;
+    fields.focus.textContent = tab.dataset.focus;
+    fields.role.textContent = tab.dataset.role;
+    fields.company.textContent = tab.dataset.company;
+    fields.copy.textContent = tab.dataset.copy;
+    spotlight.setAttribute("aria-labelledby", tab.id);
+
+    const position = document.createElement("span");
+    position.textContent = String(index + 1).padStart(2, "0");
+    const total = document.createElement("span");
+    total.textContent = String(careerTabs.length).padStart(2, "0");
+    fields.progress.replaceChildren(position, document.createElement("i"), total);
+
+    if (focus) tab.focus();
+  }
+
+  careerTabs.forEach((tab, index) => tab.addEventListener("click", () => showStation(index)));
+  bindRovingKeys(careerTabs, showStation);
+  showStation(0);
 }
 
-
-// Opening sequence: lightweight binary particles converge into a data sphere before the hero appears.
+// Opening sequence: binary particles converge into a data sphere, once per session and skippable.
 const entrySequence = document.querySelector(".entry-sequence");
 
-if (entrySequence && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+if (entrySequence && document.documentElement.dataset.entry === "seen") {
+  // Already played in this session: drop it without building any particles.
+  entrySequence.remove();
+} else if (entrySequence) {
+  const timers = [];
+  let dismissed = false;
+
+  const dismiss = () => {
+    if (dismissed) return;
+    dismissed = true;
+    timers.forEach(window.clearTimeout);
+    entrySequence.classList.add("is-exiting");
+    window.setTimeout(() => entrySequence.remove(), 550);
+    try {
+      window.sessionStorage.setItem("entry-seen", "1");
+    } catch (error) {
+      // Private browsing can block storage; the sequence simply plays again.
+    }
+    ["pointerdown", "keydown", "wheel", "touchstart"].forEach((type) =>
+      window.removeEventListener(type, dismiss));
+  };
+
+  ["pointerdown", "keydown", "wheel", "touchstart"].forEach((type) =>
+    window.addEventListener(type, dismiss, { passive: true }));
+
   const binaryField = entrySequence.querySelector(".entry-binary");
   const particleCount = 52;
 
@@ -121,11 +188,10 @@ if (entrySequence && !window.matchMedia("(prefers-reduced-motion: reduce)").matc
     digit.style.setProperty("--start-x", `${Math.round((Math.random() - 0.5) * 105)}vw`);
     digit.style.setProperty("--target-x", `${Math.round(Math.cos(angle) * radius)}px`);
     digit.style.setProperty("--target-y", `${Math.round(Math.sin(angle) * radius)}px`);
-    digit.style.setProperty("--delay", `${Math.round(Math.random() * 420)}ms`);
+    digit.style.setProperty("--delay", `${Math.round(Math.random() * 220)}ms`);
     binaryField.append(digit);
   }
 
-  window.setTimeout(() => entrySequence.classList.add("is-formed"), 1450);
-  window.setTimeout(() => entrySequence.classList.add("is-exiting"), 3450);
-  window.setTimeout(() => entrySequence.remove(), 4100);
+  timers.push(window.setTimeout(() => entrySequence.classList.add("is-formed"), 700));
+  timers.push(window.setTimeout(dismiss, 1500));
 }
